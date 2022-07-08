@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2022-07-05 07:59:00-0400
+date: 2021-09-28 07:59:00-0400
 inline: true
 ---
 
-8 ECCV papers accepted
+2 NeurIPS papers accepted
