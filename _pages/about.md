@@ -8,8 +8,8 @@ profile:
   align: left
   image: xzhu_2022.jpeg
   image_cicular: true # crops the image to make it circular
-  address: >
-    <p>388 Stag Hill, Guildford GU2 7XH Stag Hill, University Campus, Guildford GU2 7XH</p>
+  # address: >
+  #   <p>388 Stag Hill, Guildford GU2 7XH Stag Hill, University Campus, Guildford GU2 7XH</p>
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
