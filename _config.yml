@@ -15,6 +15,7 @@ keywords: AI, computer vision, multi-modal learning, perception system  # add yo
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: icon.png  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+address: Xiatian Zhu
 
 url: https://Surrey-UPLab.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
