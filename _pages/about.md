@@ -16,9 +16,10 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Universal Perception (UP) Lab is within [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence), and [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing), [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK. The mission is to advance the capabilities of machine intelligence via modeling a variety of different perception data. We are positioned among the crossing edges of core AI theory and real-world application domains and aim to develop transformable technologies for the good of our society in a responsible manner. 
+Universal Perception (UP) Lab is led by Xiatian Zhu, a Senior Lecturer with [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence), and [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing), [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK. 
+Dr. Zhu was a research scientist at Samsung AI Centre, Cambridge, UK. He received his Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/).
 
-<!-- Xiatian Zhu is a Senior Lecturer at the [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence), and [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing), [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK. Proir to that, he was a research scientist at Samsung AI Centre, Cambridge, UK. He received his Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/). His research interests include computer vision and machine learning. -->
+Our mission is to advance the capabilities of machine intelligence via modeling a variety of distinctive perception data. We are positioned at the intersection of AI theory and real-world applications, with the aim to develop transformable technologies for the good of our society in a responsible manner. 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
