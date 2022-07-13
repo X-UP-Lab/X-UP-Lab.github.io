@@ -2,16 +2,16 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Surrey UP Lab # the website title (if blank, full name will be used instead)
-first_name: Surrey
-middle_name: Universal Perception
-last_name: Lab
+title: UP Lab @ Surrey # the website title (if blank, full name will be used instead)
+first_name: Xiatian
+middle_name:
+last_name: Zhu
 email: universalperceptionlab@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Universal Perception Lab at Surrey Institute for People-Centred Artificial Intelligence, CVSSP, University of Surrey
 footer_text: >
 
-keywords: AI, computer vision, multi-modal learning, perception system  # add your own keywords or leave empty
+keywords: Xiatian Zhu, AI, universal persception, computer vision, multi-modal learning, perception system  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: icon.png  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
