@@ -36,7 +36,7 @@ def main():
     # add bibtex_show
     for entry in bib_database.entries:
         entry['bibtex_show'] = "true"
-        entry['url'] = '{}'.format(search(entry['title']))
+        entry['pdf'] = '{}'.format(search(entry['title']))
         print(entry['url'])
     
     savebib(save_bib_file, bib_database)
