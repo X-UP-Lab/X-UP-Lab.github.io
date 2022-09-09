@@ -1,0 +1,6 @@
+To add a new page:
+1) Add a xx.md in _pages (e.g. start from projects.md from the al-folio github)
+2) To specify page layout (the template from _layout -- webpage layout lib), title, permalink etc.
+3) To specify the corresponding control vars in _config.yml
+4) To define a html template for each item (e.g., member.html in _includes -- webpage component lib) to be used by the xx.md
+5) To add new content, each item may be defined in a specific format (e.g., member.html in _includes) with the content from a separate file (e.g. in phd_swapnil.md in _team) 
