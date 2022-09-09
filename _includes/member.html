@@ -1,19 +1,19 @@
 <!-- _includes/team.html -->
 <div class="grid-sizer"></div>
 <div class="grid-item">
-  {% if team.redirect -%}
-  <a href="{{ team.redirect }}">
+  {% if member.redirect -%}
+  <a href="{{ member.redirect }}">
   {%- else -%}
-  <a href="{{ team.homepage | relative_url }}">
+  <a href="{{ member.homepage | relative_url }}">
   {%- endif %}
     <div class="card hoverable">
-      {%- if team.img %}
+      {%- if member.img %}
       {%- include figure.html
-        path=team.img
-        alt="team thumbnail" -%}
+        path=member.img
+        alt="member thumbnail" -%}
       {%- endif %}
       <div class="card-body">
-        <p class="card-text">{{ team.name }}</p>
+        <p class="card-text">{{ member.name }}</p>
       </div>
     </div>
   </a>

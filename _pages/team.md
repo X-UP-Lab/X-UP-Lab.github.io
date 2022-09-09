@@ -5,7 +5,7 @@ permalink: /team/
 description:
 nav: true
 nav_order: 1
-display_categories: [PhDs, Visitors]
+display_categories: [PhDs]
 horizontal: true
 ---
 
@@ -21,15 +21,15 @@ horizontal: true
   {% if page.horizontal -%}
   <div class="container">
     <div class="row row-cols-2">
-    {%- for team in sorted_team -%}
-      {% include team_horizontal.html %}
+    {%- for member in sorted_team -%}
+      {% include member_horizontal.html %}
     {%- endfor %}
     </div>
   </div>
   {%- else -%}
   <div class="grid">
-    {%- for team in sorted_team -%}
-      {% include team.html %}
+    {%- for member in sorted_team -%}
+      {% include member.html %}
     {%- endfor %}
   </div>
   {%- endif -%}
@@ -37,20 +37,20 @@ horizontal: true
 
 {%- else -%}
 <!-- Display projects without categories -->
-  {%- assign sorted_projects = site.projects | sort: "importance" -%}
+  {%- assign sorted_team = site.team | sort: "importance" -%}
   <!-- Generate cards for each project -->
   {% if page.horizontal -%}
   <div class="container">
     <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
+    {%- for member in sorted_team -%}
+      {% include member_horizontal.html %}
     {%- endfor %}
     </div>
   </div>
   {%- else -%}
   <div class="grid">
-    {%- for project in sorted_projects -%}
-      {% include projects.html %}
+    {%- for member in sorted_team -%}
+      {% include member.html %}
     {%- endfor %}
   </div>
   {%- endif -%}
