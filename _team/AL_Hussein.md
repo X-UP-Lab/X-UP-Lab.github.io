@@ -1,9 +1,9 @@
 ---
 layout: page
 name: AL-Hussein
-description: XXX
+description: YYY
 img: assets/img/12.jpg
-homepage: xxx
+homepage: https://www.sofascore.com/team/football/al-hussein-irbid/117204
 importance: 1
 category: PhD
 ---

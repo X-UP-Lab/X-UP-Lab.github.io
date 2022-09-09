@@ -3,18 +3,18 @@
 <div class="grid-item">
   {% if team.redirect -%}
   <a href="{{ team.redirect }}">
-    {%- else -%}
-    <a href="{{ team.url | relative_url }}">
+  {%- else -%}
+  <a href="{{ team.homepage | relative_url }}">
+  {%- endif %}
+    <div class="card hoverable">
+      {%- if team.img %}
+      {%- include figure.html
+        path=team.img
+        alt="team thumbnail" -%}
       {%- endif %}
-      <div class="card hoverable">
-        {%- if team.img %}
-        {%- include figure.html
-          path=team.img
-          alt="team thumbnail" -%}
-        {%- endif %}
-        <div class="card-body">
-          <p class="card-text">{{ team.name }}</p>
-        </div>
+      <div class="card-body">
+        <p class="card-text">{{ team.name }}</p>
       </div>
-    </a>
+    </div>
+  </a>
 </div>
