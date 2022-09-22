@@ -17,7 +17,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 Universal Perception (UP) Lab is led by Xiatian Zhu, a Senior Lecturer with [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence), and [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing), [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK. 
-Dr. Zhu was a research scientist at Samsung AI Centre, Cambridge, UK. He received his Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/).
+He was a research scientist at Samsung AI Centre, Cambridge, UK. He received his Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/).
 
 UP Lab's mission is to advance the capabilities of machine intelligence via modeling a variety of distinctive perception data. We are positioned at the intersection of AI theory and real-world applications, with the aim to develop transforming technologies for the good of our society in a responsible manner. 
 
