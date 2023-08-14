@@ -21,6 +21,8 @@ He was a research scientist at Samsung AI Centre, Cambridge, UK. He received his
 
 The mission of UP Lab is to advance the capabilities of AI through modeling a variety of perception data (e.g. images, videos, audio, text, 3D points). We are working around the understanding of both machine learning theories and real-world domain applications, with the aim to develop transformative technologies for the good of our society. 
 
+For research collaboration and opsition openings, please feel free to [contact us](mailto:universalperceptionlab@gmail.com).
+
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
