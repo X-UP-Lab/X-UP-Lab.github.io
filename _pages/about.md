@@ -21,7 +21,7 @@ He was a research scientist at Samsung AI Centre, Cambridge, UK. He received his
 
 The mission of UP Lab is to advance the capabilities of AI through modeling a variety of perception data (e.g. images, videos, audio, text, 3D points). We are working around the understanding of both machine learning theories and real-world domain applications, with the aim to develop transformative technologies for the good of our society. 
 
-For research collaboration and opsition openings, please feel free to [contact us](mailto:universalperceptionlab@gmail.com).
+For research collaboration and studentship openings, please feel free to [contact us](mailto:universalperceptionlab@gmail.com).
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
