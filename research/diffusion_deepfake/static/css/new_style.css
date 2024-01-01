@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .item {
+    flex: none;
+    width: 300px;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    text-align: center;
+  }
+  
+  .buttons {
+    margin-top: 10px;
+  }
+  
+  .button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .real-button {
+    background-color: green;
+  }
+  
+  .fake-button {
+    background-color: red;
+  }
+  
+  .answer {
+    margin-top: 10px;
+    color: blue;
+  }
+  
