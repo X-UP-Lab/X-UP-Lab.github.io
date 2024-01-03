@@ -16,12 +16,11 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Universal Perception (UP) Lab is led by Xiatian Zhu, a Senior Lecturer with [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence), and [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing), [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK. 
-He was a research scientist at Samsung AI Centre, Cambridge, UK. He received his Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/).
+Xiatian Zhu, a Senior Lecturer affiliated with the [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence) and the [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing) at the [University of Surrey](https://www.surrey.ac.uk/) in Guildford, UK, leads the Universal Perception (UP) Lab. Previously a research scientist at Samsung AI Centre, Cambridge, UK, Dr. Zhu holds a Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/).
 
-The mission of UP Lab is to advance the capabilities of AI through modeling a variety of perception data (e.g. images, videos, audio, text, 3D points, LiDAR, remote sensening). The application domains include compute vision, healthcare, weather and climate, finance, cybersecurity, and social matters. We are working around the understanding of both machine learning theories and real-world domain applications, with the aim to develop transformative technologies for the good of our society. 
+The UP Lab is dedicated to advancing AI capabilities by modelling diverse perception data, such as images, videos, audio, text, 3D points, LiDAR, and remote sensing. Application domains span computer vision, healthcare, weather and climate, finance, cybersecurity, and social issues. Our work emphasizes the intersection of machine learning theories and real-world domain applications, aiming to develop transformative technologies for societal benefit.
 
-For research collaboration and studentship openings, please feel free to [contact us](mailto:universalperceptionlab@gmail.com).
+For inquiries about research collaboration and student opportunities, please [contact us](mailto:universalperceptionlab@gmail.com).
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
