@@ -5,7 +5,7 @@ permalink: /team/
 description:
 nav: true
 nav_order: 1
-display_categories: [PhDs, Visitors]
+display_categories: [PhDs, Visitors, Alumnis]
 horizontal: true
 ---
 
