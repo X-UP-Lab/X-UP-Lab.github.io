@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Diffusion Deepfake Dataset">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerfies: Deformable Neural Radiance Fields</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sign Up and Sign In to Download Dataset</title>
+      <!-- Add any additional CSS or libraries here -->
+    </head>
+    <body>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-light" id="signInBtn">
+                  Sign in
+                </a>
+                <a class="button is-primary" id="signUpBtn">
+                  <strong>Sign up</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+      <a href="https://drive.google.com/drive/folders/132XhW4Z5Gp7BdcQyb9H65l7ESGB3G4In" id="downloadDataset" class="button is-link" style="display: none;">
+        Download Dataset
+      </a>
+    
+      <script>
+        // Simulated database of users
+        const users = {};
+      
+        // Function to validate email using regular expression
+        function isValidEmail(email) {
+          var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(email.toLowerCase());
+        }
+      
+        // Sign Up Event Listener
+        document.getElementById('signUpBtn').addEventListener('click', function() {
+          const email = prompt("Enter your email for sign up:").toLowerCase();
+      
+          // Check for valid email
+          if (!isValidEmail(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+          // Check if email is already registered
+          if (users[email]) {
+            alert('Email is already registered. Please sign in.');
+            return;
+          }
+          // Prompt for password and store user
+          const password = prompt("Enter your password:");
+          users[email] = { password };
+      
+          console.log('User signed up:', email); // Log sign up
+          alert('Sign up successful! Please sign in.');
+        });
+      
+        // Sign In Event Listener
+        document.getElementById('signInBtn').addEventListener('click', function() {
+          const email = prompt("Enter your email to sign in:").toLowerCase();
+      
+          // Check for valid email
+          if (!isValidEmail(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+          // Check if email is registered
+          if (!users[email]) {
+            alert('Email is not registered. Please sign up.');
+            return;
+          }
+          // Prompt for password and check if it matches
+          const password = prompt("Enter your password:");
+          if (users[email].password === password) {
+            alert('Signed in successfully!');
+            document.getElementById('downloadDataset').style.display = 'block'; // Show download link
+      
+            console.log('User signed in:', email); // Log sign in
+          } else {
+            alert('Incorrect password. Please try again.');
+          }
+        });
+      </script>
+      
+      
+      
+      
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Dataset: Diffusion Deepfake</h1>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaserImage" src="./static/videos/Image1.PNG" alt="Teaser Image" style="width: 100%; height: auto;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Diffusion Deepfake</span> Preview of the benchmark dataset
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Main Section -->
+<section class="main-section">
+  <!-- Subsection for JourneyDB -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="teaserImageJourneyDB" src="./static/videos/jdb_filter.PNG" alt="JourneyDB Teaser Image" style="width: 100%; height: auto;">
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">JourneyDB : </span> Preview of correctly classified metadata by BERT
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End Subsection for JourneyDB -->
+
+  <!-- Subsection for DiffusionDb -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="teaserImageDiffusionDb" src="./static/videos/dfdb_filter.PNG" alt="DiffusionDb Teaser Image" style="width: 100%; height: auto;">
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">DiffusionDb: </span> Preview of BERT classified metadata with the corresponding scores. A: ”human face”; B: ”not human face”
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End Subsection for DiffusionDb -->
+</section>
+<!-- End Main Section -->
+
+
+<section class="section">
+
+
+    
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            For downloading the dataset, you need to first make an account. After you sign in you can easily download the dataset,
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/xyz">Diffusion Deepfake</a>A Diffusion deepfake benchmark dataset with efficient data generalization training strategy.
+          </p>
+          <p>
+            For visiting our project page you can click on <a href="https://surrey-uplab.github.io/research/diffusion_deepfake/">Diffusion Deepfake</a>, and for code : <a href="https://github.com/Surrey-UPLab/Diffusion-Deepfake"> code</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
