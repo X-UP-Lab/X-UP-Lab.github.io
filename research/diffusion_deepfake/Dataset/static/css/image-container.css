@@ -1,0 +1,24 @@
+<style>
+  .image-container {
+    display: flex;
+    overflow-x: hidden;
+    white-space: nowrap;
+    animation: scrollImages 20s linear infinite;
+  }
+
+  .image-container img {
+    flex-shrink: 0;
+    width: auto;
+    height: 100px; /* Adjust based on your preference */
+    margin-right: 10px; /* Spacing between images */
+  }
+
+  @keyframes scrollImages {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
