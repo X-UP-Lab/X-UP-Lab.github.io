@@ -1,7 +1,7 @@
 ---
 layout: page
 name: Tian Zhang
-description: Zero-shot composition
+description: Composition GenAI
 img: assets/img/members/tian.png
 homepage: ./
 importance: 100
