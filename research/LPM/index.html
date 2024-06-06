@@ -239,10 +239,8 @@
         <div class="content has-text-justified">
           <center>
             <img src="./static/image/LPM_pipeline.png" width="1000"/>
-          </center>
-          <h2 class="subtitle has-text-centered">
+          </center>        
           Overview of the Localized Point Management (LPM). (a) We start with an image rendering error map against the current view (the ground-truth). Concurrently, matching points are identified between the current view and a refereed view sampled as an adjacent view via off-the-shelf feature mapping. (b)Subsequently, cross-view region mapping is then employed to locate the correspondence region in the refereed view. (c)For each pair of corresponded regions, we cast the rays through them at their respective camera views in the cone shape, and consider their intersection as the error source zone. The final step involves identifying under-optimized or ill-conditioned points within these zones, where under-optimized/empty places are densified, ill-conditioned points are reset.
-          </h2>
           <br> 
         <!-- <center>
           <img src="static/images/LPM_result.png"  width="1000">
