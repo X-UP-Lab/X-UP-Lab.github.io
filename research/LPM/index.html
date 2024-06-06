@@ -210,7 +210,7 @@
         <div class="content has-text-justified">
           <center>
             <img src="./static/image/LPM_result.png" width="1000"/>
-          </center>Visualization of points behavior. 3DGS produces ill-conditioned Gaussians (red box) that occlude other valid points, resulting in noticeably incorrect depth estimation. LPM handles these ill-conditioned points to reduce negative impacts and further calibrate the geometry.<br>
+          </center><b>Visualization of points behavior.</b> 3DGS produces ill-conditioned Gaussians (red box) that occlude other valid points, resulting in noticeably incorrect depth estimation. LPM handles these ill-conditioned points to reduce negative impacts and further calibrate the geometry.<br>
           <!-- Overview of the Localized Point Management (LPM). -->
           <br> 
           <br> 
@@ -240,7 +240,7 @@
           <center>
             <img src="./static/image/LPM_pipeline.png" width="1000"/>
           </center>        
-          Overview of the Localized Point Management (LPM). (a) We start with an image rendering error map against the current view (the ground-truth). Concurrently, matching points are identified between the current view and a refereed view sampled as an adjacent view via off-the-shelf feature mapping. (b)Subsequently, cross-view region mapping is then employed to locate the correspondence region in the refereed view. (c)For each pair of corresponded regions, we cast the rays through them at their respective camera views in the cone shape, and consider their intersection as the error source zone. The final step involves identifying under-optimized or ill-conditioned points within these zones, where under-optimized/empty places are densified, ill-conditioned points are reset.
+          <b>Overview of the Localized Point Management (LPM).</b> (a) We start with an image rendering error map against the current view (the ground-truth). Concurrently, matching points are identified between the current view and a refereed view sampled as an adjacent view via off-the-shelf feature mapping. (b)Subsequently, cross-view region mapping is then employed to locate the correspondence region in the refereed view. (c)For each pair of corresponded regions, we cast the rays through them at their respective camera views in the cone shape, and consider their intersection as the error source zone. The final step involves identifying under-optimized or ill-conditioned points within these zones, where under-optimized/empty places are densified, ill-conditioned points are reset.
           <br> 
         <!-- <center>
           <img src="static/images/LPM_result.png"  width="1000">
@@ -263,13 +263,13 @@
           <center>
             <img src="./static/image/LPM_qresult.png"  width="600">
           </center>        
-          Comparison of various methods across different scenes on the Mip-NeRF 360 dataset, Tanks&Temples and Deep Blending. 3D* indicates the retrained model from the official implementation. Bold represents best, underline indicates second best.
+          <b>Comparison of various methods across different scenes on the Mip-NeRF 360 dataset, Tanks&Temples and Deep Blending.</b> 3D* indicates the retrained model from the official implementation. Bold represents best, underline indicates second best.
           <br> 
           <p>&nbsp;</p>
           <center>
             <img src="./static/image/LPM_qresult2.png"  width="600">
           </center>
-          Quantitative comparisons on the Neural 3D Video dataset. “FPS” is measured at a resolution of 1352 × 1014. Some methods only report results for a subset of scenes. For a fair comparison, we report LPM’s results under two pre-existing settings. Only includes the Flame Salmon scene. Bold represents best, underline indicates second best.
+          <b>Quantitative comparisons on the Neural 3D Video dataset.</b> “FPS” is measured at a resolution of 1352 × 1014. Some methods only report results for a subset of scenes. For a fair comparison, we report LPM’s results under two pre-existing settings. Only includes the Flame Salmon scene. Bold represents best, underline indicates second best.
         <!-- <center>
           <img src="static/images/LPM_result.png"  width="1000">
         </center> -->
@@ -284,17 +284,6 @@
       <div class="column is-full-width">
         <!-- <h2 class="title is-3">Quantitative Results</h2> -->
         <div class="content has-text-justified">
-          <!-- <center>
-            <img src="./static/image/LPM_qresult.png"  width="600">
-          </center>
-          Comparison of various methods across different scenes on the Mip-NeRF 360 dataset, Tanks&Temples and Deep Blending. 3D* indicates the retrained model from the official implementation. Bold represents best, underline indicates second best.
-          <!-- On the Neural 3D Video dataset [3], our method achieves state-of-the-art rendering quality and speed, while retaining compact storage. -->
-          <p>&nbsp;</p>
-          
-          <center>
-            <img src="./static/image/LPM_qresult2.png"  width="600">
-          </center>
-          Quantitative comparisons on the Neural 3D Video dataset. “FPS” is measured at a resolution of 1352 × 1014. Some methods only report results for a subset of scenes. For a fair comparison, we report LPM’s results under two pre-existing settings. Only includes the Flame Salmon scene. Bold represents best, underline indicates second best. -->
           <style>
             .grid-container {
               display: grid;
