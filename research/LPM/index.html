@@ -150,7 +150,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2312.16812"
+                <a href="https://surrey-uplab.github.io/research/LPM/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -207,6 +207,18 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <center>
+            <img src="./static/image/LPM_result.png" width="1000"/>
+          </center>Visualization of points behavior. 3DGS produces ill-conditioned Gaussians (red box) that occlude other valid points, resulting in noticeably incorrect depth estimation. LPM handles these ill-conditioned points to reduce negative impacts and further calibrate the geometry.<br>
+          <!-- Overview of the Localized Point Management (LPM). -->
+          <br> 
+          <br> 
+        <!-- <center>
+          <img src="static/images/LPM_result.png"  width="1000">
+        </center> -->
+        <!-- Example Result -->
+        </div>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -223,13 +235,13 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        <h2 class="title is-3">Method</h2>
+        <!-- <h2 class="title is-3">Method</h2> -->
         <div class="content has-text-justified">
           <center>
             <img src="./static/image/LPM_pipeline.png" width="1000"/>
           </center>
           <h2 class="subtitle has-text-centered">
-          Overview of the Localized Point Management (LPM).
+          Overview of the Localized Point Management (LPM). (a) We start with an image rendering error map against the current view (the ground-truth). Concurrently, matching points are identified between the current view and a refereed view sampled as an adjacent view via off-the-shelf feature mapping. (b)Subsequently, cross-view region mapping is then employed to locate the correspondence region in the refereed view. (c)For each pair of corresponded regions, we cast the rays through them at their respective camera views in the cone shape, and consider their intersection as the error source zone. The final step involves identifying under-optimized or ill-conditioned points within these zones, where under-optimized/empty places are densified, ill-conditioned points are reset.
           </h2>
           <br> 
         <!-- <center>
@@ -237,35 +249,24 @@
         </center> -->
         <!-- Example Result -->
         </div>
-        <h2 class="subtitle has-text-centered">Example Result</h2>
-        <div class="content has-text-justified">
-          <center>
-            <img src="./static/image/LPM_result.png" width="1000"/>
-          </center><br>
-          <!-- Overview of the Localized Point Management (LPM). -->
-          <br> 
-          <br> 
-        <!-- <center>
-          <img src="static/images/LPM_result.png"  width="1000">
-        </center> -->
-        <!-- Example Result -->
-        </div>
+        <!-- <h2 class="subtitle has-text-centered">Example Result</h2> -->
+        
       </div>
     </div>
     <br>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-3">Quantitative Results</h2>
         <div class="content has-text-justified">
           <center>
             <img src="./static/image/LPM_qresult.png"  width="600">
           </center>
-          <center>3D scene</center>
+          <center>Comparison of various methods across different scenes on the Mip-NeRF 360 dataset, Tanks&Temples and Deep Blending. 3D* indicates the retrained model from the official implementation. Bold represents best, underline indicates second best.</center>
           <!-- On the Neural 3D Video dataset [3], our method achieves state-of-the-art rendering quality and speed, while retaining compact storage. -->
           <center>
             <img src="./static/image/LPM_qresult2.png"  width="600">
           </center>
-          <center>4D scene</center>
+          <center>Quantitative comparisons on the Neural 3D Video dataset. “FPS” is measured at a resolution of 1352 × 1014. Some methods only report results for a subset of scenes. For a fair comparison, we report LPM’s results under two pre-existing settings. Only includes the Flame Salmon scene. Bold represents best, underline indicates second best.</center>
           <style>
             .grid-container {
               display: grid;
@@ -279,7 +280,7 @@
 
           <br>
 
-          <h2 class="title is-3">Comparisons</h2>
+          <center><h2 class="title is-3">Qualitative Comparisons</h2></center>
 
           <!--/ Paper video. -->
 
@@ -520,7 +521,7 @@
     <pre><code>@inproceedings{Localized Gaussian Point Management,
     title={Localized Gaussian Point Management},
     author={Haosen Yang, Chenhao Zhang, Wenqing wang, Marco Volino, Adrian Hilton, Li Zhang, Xiatian Zhu},
-    journal={arXiv preprint arXiv:2311.01373},
+    journal={arXiv preprint arXiv:xxxxxx},
     year={2024}
   }</code></pre>
 <p>&nbsp;</p>
@@ -528,7 +529,7 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
+    <!-- <div class="content has-text-centered">
       <a class="icon-link"
          href="">
         <i class="fas fa-file-pdf"></i>
@@ -536,7 +537,7 @@
       <a class="icon-link" href="https://github.com/Surrey-UPLab/Localized-Gaussian-Point-Management" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
-    </div>
+    </div> -->
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
