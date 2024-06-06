@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Localized Gaussian Point Management">
+  <meta name="keywords" content="neural fields, 6DoF, Novel View Synthesis, MR/XR, computer vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Localized Gaussian Point Management</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/before_after.css">
+  <!-- <link rel="icon" href="./static/images/cameraicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="./static/css/magnify.css">
+  <script src="./static/js/jquery-2.2.4.min.js"></script>
+  <script src="./static/js/jquery.magnify.js"></script>
+
+  <script src="twentytwenty/js/jquery-3.2.1.min.js" defer type="text/javascript"></script>
+  <script src="twentytwenty/js/jquery.event.move.js" defer type="text/javascript"></script>
+  <script src="twentytwenty/js/jquery.twentytwenty.js" defer type="text/javascript"></script>
+  <link rel="stylesheet" href="twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <!-- <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://oppo-us-research.github.io/OPPO_US_Research_Center_XR_Team">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div> -->
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Localized Gaussian Point Management</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Haosen Yang<sup>*1</sup>,</span>
+            <span class="author-block">
+              Chenhao Zhang<sup>*1</sup>,</span>
+            <span class="author-block">
+              Wenqing Wang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Marco Volino<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Adrian Hilton<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Li Zhang<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Xiatian Zhu<sup>1</sup>
+            </span>
+          </div>
+          <div>
+            (* Equal Contribution)
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Surrey,</span>
+            <span class="author-block"><sup>2</sup>Fudan University</span>
+          </div>
+          <br>
+          <!-- <p>&nbsp;</p> -->
+          <script>
+            $(document).ready(function() {
+              // var $zoom = $('.zoom').magnify(
+              // //   {
+              // //   magnifiedWidth: 1000,
+              // //   magnifiedHeight: 753
+              // // }
+              // );
+              // $zoom.destroy();
+            });
+          </script>
+<style>
+.magnify > .magnify-lens {
+  width: 130px;
+  height: 130px;
+}
+</style>
+
+<style>
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+  
+  /* Style the active class, and buttons on mouse-over */
+  .active, .btn:hover {
+    background-color: #666;
+    color: white;
+  }
+
+  /* .twentytwenty-container {
+    min-height: 200px;
+} */
+
+  </style>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+<!--               <span class="link-block">
+                <a href="https://arxiv.org/pdf/2312.16812.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.16812"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+<!--               <span class="link-block">
+                <a href="https://youtu.be/YsPPmf-E6Lg"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://github.com/Surrey-UPLab/Localized-Gaussian-Point-Management"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+<!--               <span class="link-block">
+                <a href="https://huggingface.co/stack93/spacetimegaussians/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-file"></i>
+                  </span>
+                  <span>Viewer and Models</span>
+                  </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Point management is a critical component in optimizing 3D Gaussian Splatting (3DGS) models, as the point initiation (e.g., via structure from motion) is distributionally inappropriate. Typically, the Adaptive Density Control (ADC) algorithm is applied, leveraging view-averaged gradient magnitude thresholding for point densification, opacity thresholding for pruning, and regular all-points opacity reset. However, we reveal that this strategy is limited in tackling intricate/special image regions (e.g., transparent) as it is unable to identify all the 3D zones that require point densification, and lacking an appropriate mechanism to handle the ill-conditioned points with negative impacts (occlusion due to false high opacity). To address these limitations, we propose a Localized Point Management (LPM) strategy, capable of identifying those error-contributing zones in the highest demand for both point addition and geometry calibration. Zone identification is achieved by leveraging the underlying multiview geometry constraints, with the guidance of image rendering errors. We apply point densification in the identified zone, whilst resetting the opacity of those points residing in front of these regions so that a new opportunity is created to correct ill-conditioned points. Serving as a versatile plugin, LPM can be seamlessly integrated into existing 3D Gaussian Splatting models. Experimental evaluation across both static 3D and dynamic 4D scenes validate the efficacy of our LPM strategy in boosting a variety of existing 3DGS models both quantitatively and qualitatively. Notably, LPM improves both vanilla 3DGS and SpaceTimeGS to achieve state-of-the-art rendering quality while retaining real-time speeds, outperforming on challenging datasets such as Tanks & Temples and the Neural 3D Video Dataset.</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <!-- Paper video. -->
+    <br>
+    <!--/ Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <center>
+            <img src="./static/image/LPM_pipeline.png" width="1000"/>
+          </center>
+          <h2 class="subtitle has-text-centered">
+          Overview of the Localized Point Management (LPM).
+          </h2>
+          <br> 
+        <!-- <center>
+          <img src="static/images/LPM_result.png"  width="1000">
+        </center> -->
+        <!-- Example Result -->
+        </div>
+        <h2 class="subtitle has-text-centered">Example Result</h2>
+        <div class="content has-text-justified">
+          <center>
+            <img src="./static/image/LPM_result.png" width="1000"/>
+          </center><br>
+          <!-- Overview of the Localized Point Management (LPM). -->
+          <br> 
+          <br> 
+        <!-- <center>
+          <img src="static/images/LPM_result.png"  width="1000">
+        </center> -->
+        <!-- Example Result -->
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <center>
+            <img src="./static/image/LPM_qresult.png"  width="600">
+          </center>
+          <center>3D scene</center>
+          <!-- On the Neural 3D Video dataset [3], our method achieves state-of-the-art rendering quality and speed, while retaining compact storage. -->
+          <center>
+            <img src="./static/image/LPM_qresult2.png"  width="600">
+          </center>
+          <center>4D scene</center>
+          <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
+              grid-gap: 10px; /* Adjust the gap between the divs */
+            }
+            .grid-item {
+              width: 100%;
+            }
+          </style>
+
+          <br>
+
+          <h2 class="title is-3">Comparisons</h2>
+
+          <!--/ Paper video. -->
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px;margin-right: 20px; ">
+                <img class="slider-image" style="width: 467px; " src="./static/image/gs_images_3d_good/windows/00021-a.png" />
+                <img class="slider-image" style="width: 467px; " src="./static/image/gs_images_3d_good/windows/00021-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px;">
+                <img class="slider-image" style="width: 467px;" src="./static/image/gs_images_3d_good/windows/00005-a.png" />
+                <img class="slider-image" style="width: 467px;" src="./static/image/gs_images_3d_good/windows/00005-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 295px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 335px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-right: 20px;  margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/somethingappear/00002-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/somethingappear/00002-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px;  margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/somethingappear/00010-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/somethingappear/00010-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 335px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 310px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+          </div>
+          <!--/ Paper video. -->
+
+          <!-- <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-right: 20px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/light/00024-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/light/00024-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/more clear/00015-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/more clear/00015-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 330px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 305px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-right: 20px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/artifact/00003-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/artifact/00003-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/artifact/00024-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/artifact/00024-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 330px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 305px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px;margin-right: 20px; ">
+                <img class="slider-image" style="width: 467px; " src="./static/image/gs_images_3d_good/artifact/00000-a.png" />
+                <img class="slider-image" style="width: 467px; " src="./static/image/gs_images_3d_good/artifact/00000-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px;">
+                <img class="slider-image" style="width: 467px;" src="./static/image/gs_images_3d_good/wrongplacedisappear/00007-a.png" />
+                <img class="slider-image" style="width: 467px;" src="./static/image/gs_images_3d_good/wrongplacedisappear/00007-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 295px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 335px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-right: 20px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/light/00048-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/gs_images_3d_good/light/00048-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/4d_good/00032-12000-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/4d_good/00032-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 330px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 305px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>3DGS</b></span>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-right: 20px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/4d_good/00042-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/4d_good/00042-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-top: 10px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/4d_good/00043-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/4d_good/00043-b.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 330px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>SpacetimeGS</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 305px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>SpacetimeGS</b></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- <h3 class="title is-4">Ablation on guided sampling</h3>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-right: 20px;">
+                <img class="slider-image" style="width: 467px" src="./static/images/ems1/crop/ouswithguided_cropped.png" />
+                <img class="slider-image" style="width: 467px" src="./static/images/ems1/crop/ouswithoutguid_cropped.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px;">
+                <img class="slider-image" style="width: 467px" src="./static/images/ems2/ouswithguided.png" />
+                <img class="slider-image" style="width: 467px" src="./static/images/ems2/ouswithoutguid.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 200px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>Ours without guided sampling</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 195px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>Ours without guided sampling</b></span>
+              </div>
+            </div>
+          </div> -->
+
+          <!--/ EMS -->
+          <!-- <h3 class="title is-4">Comparisons on temporal consistency</h3>
+          <center>
+            <img src="./static/images/comparetemporal.png"width="1000">          
+          </center> -->
+          <body><br/></body>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title" style="text-align: center;">BibTeX</h2>
+    <pre><code>@inproceedings{Localized Gaussian Point Management,
+    title={Localized Gaussian Point Management},
+    author={Haosen Yang, Chenhao Zhang, Wenqing wang, Marco Volino, Adrian Hilton, Li Zhang, Xiatian Zhu},
+    journal={arXiv preprint arXiv:2311.01373},
+    year={2024}
+  }</code></pre>
+<p>&nbsp;</p>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Surrey-UPLab/Localized-Gaussian-Point-Management" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This great website template was borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>, <a
+              href="https://github.com/defocus-control/defocus-control.github.io">DC<sup>2</sup></a> and <a
+              href="https://github.com/oppo-us-research/NeuRBF-website">NeuRBF</a> and <a
+              href="https://github.com/oppo-us-research/SpacetimeGaussians-website">SpacetimeGaussians</a>!
+          </p>
+          <!-- <p>
+            The visualiation of the Spacetime Gaussians is inspired from visualization of 3D Gaussians from <a
+              href="https://lumalabs.ai/">Luma AI</a>.
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
