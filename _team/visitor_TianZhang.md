@@ -4,6 +4,6 @@ name: Tian Zhang
 description: Composition GenAI
 img: assets/img/members/tian.png
 homepage: ./
-importance: 100
+importance: 96
 category: Visitors
 ---

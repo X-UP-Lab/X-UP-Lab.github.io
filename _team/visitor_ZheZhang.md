@@ -1,9 +1,9 @@
 ---
 layout: page
-name: Yuchao Li
+name: Zhe Zhang
 description: Multi-modal AI
-img: assets/img/members/YuchaoLi.jpeg
+img: assets/img/members/ZheZhang.jpeg
 homepage: ./
-importance: 97
+importance: 98
 category: Visitors
 ---
