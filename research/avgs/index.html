@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis">
+  <meta name="keywords" content="neural fields, Spatial Audio, Novel View Acoustic Synthesis, AR/VR, computer vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/before_after.css">
+  <!-- <link rel="icon" href="./static/images/cameraicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="./static/css/magnify.css">
+  <script src="./static/js/jquery-2.2.4.min.js"></script>
+  <script src="./static/js/jquery.magnify.js"></script>
+
+  <script src="twentytwenty/js/jquery-3.2.1.min.js" defer type="text/javascript"></script>
+  <script src="twentytwenty/js/jquery.event.move.js" defer type="text/javascript"></script>
+  <script src="twentytwenty/js/jquery.twentytwenty.js" defer type="text/javascript"></script>
+  <link rel="stylesheet" href="twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <!-- <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://oppo-us-research.github.io/OPPO_US_Research_Center_XR_Team">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div> -->
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Swapnil Bhosale<sup>1</sup>,</span>
+            <span class="author-block">
+              Haosen Yang<sup>1</sup>,</span>
+            <span class="author-block">
+              Diptesh Kanojia<sup>*1</sup>,</span>
+            <span class="author-block">
+              Jiankang Deng<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Xiatian Zhu<sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Surrey, UK,</span>
+            <span class="author-block"><sup>2</sup>Imperial College London, UK</span>
+          </div>
+          <br>
+          <!-- <p>&nbsp;</p> -->
+          <script>
+            $(document).ready(function() {
+              // var $zoom = $('.zoom').magnify(
+              // //   {
+              // //   magnifiedWidth: 1000,
+              // //   magnifiedHeight: 753
+              // // }
+              // );
+              // $zoom.destroy();
+            });
+          </script>
+<style>
+.magnify > .magnify-lens {
+  width: 130px;
+  height: 130px;
+}
+</style>
+
+<style>
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+  
+  /* Style the active class, and buttons on mouse-over */
+  .active, .btn:hover {
+    background-color: #666;
+    color: white;
+  }
+
+  /* .twentytwenty-container {
+    min-height: 200px;
+} */
+
+  </style>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.04251"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/Surrey-UPLab"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <center>
+            <img src="./static/image/avgs_result.png" width="1000"/>
+          </center>Sound propagation point patterns between a listener (blue sphere) and emitter (yellow sphere) captured by our AV-GS. Notice the points outside the propagation path (points behind the speaker, points behind rigid walls). Please note we slice the scene into half along the y-axis (omitting the points from the ceiling) in order to facilitate better visibility.<br>
+          <!-- Overview of the Localized Point Management (LPM). -->
+          <br> 
+          <br> 
+        <!-- <center>
+          <img src="static/images/LPM_result.png"  width="1000">
+        </center> -->
+        <!-- Example Result -->
+        </div>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Novel view acoustic synthesis (NVAS) aims to render binaural audio at any target viewpoint, given a mono audio emitted by a sound source at a 3D scene. Existing methods have proposed NeRF-based implicit models to exploit visual cues as a condition for synthesizing binaural audio. However, in addition to low efficiency originating from heavy NeRF rendering, these methods all have a limited ability of characterizing the entire scene environment such as room geometry, material properties, and the spatial relation between the listener and sound source. To address these issues, we propose a novel Audio-Visual Gaussian Splatting (AV-GS) model. To obtain a material-aware and geometry-aware condition for audio synthesis, we learn an explicit point-based scene representation with an audio-guidance parameter on locally initialized Gaussian points, taking into account the space relation from the listener and sound source. To make the visual scene model audio adaptive, we propose a point densification and pruning strategy to optimally distribute the Gaussian points, with the per-point contribution in sound propagation (e.g., more points needed for texture-less wall surfaces as they affect sound path diversion). Extensive experiments validate the superiority of our AV-GS over existing alternatives on the real-world RWAS and simulation-based SoundSpaces datasets.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <!-- Paper video. -->
+    <br>
+    <!--/ Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+<!--         <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p> -->
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <center>
+            <img src="./static/image/avgs_pipeline.png" width="1000"/>
+          </center>        
+          <b> Overview of our proposed AV-GS.</b> Our model is comprised of a 3D Gaussian Splatting model G, an acoustic field network F and an audio binauralizer B. We first train $G$ to capture the scene geometry information. Next, we construct an audio-focused point representation G_a, with the location X and audio-guidance parameter a initialized by the pre-trained G. Then the acoustic field network F is used to process the a parameters for all the Gaussian points in the vicinity of the listener and the sound source (in the 3D space). The output from F is finally used to condition the audio binauralizer B, which transforms the mono audio to binaural audio w.r.t the listener and sound source location.
+          <br> 
+        <!-- <center>
+          <img src="static/images/LPM_result.png"  width="1000">
+        </center> -->
+        <!-- Example Result -->
+        </div>
+        <!-- <h2 class="subtitle has-text-centered">Example Result</h2> -->
+        
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+<!--         <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p> -->
+        <!-- <h2 class="title is-3">Method</h2> -->
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <center>
+            <img src="./static/image/avgs_result1.png"  width="600">
+          </center>        
+          Comparison with state-of-the-art methods on RWAVS dataset.
+          <br> 
+          <p>&nbsp;</p>
+          <center>
+            <img src="./static/image/avgs_qual_res.png"  width="600">
+          </center>        
+          In the presence of (a) complex geometry, and (b) meaningless views, AV-NeRF, when compared to our AV-GS makes errors in binaural synthesis. For both scenarios we showcase the corresponding listener view, used by AV-NeRF, as well as the learned holistic scene representation that is used by AV-GS, and hence unaffected by both scenarios.
+          <br> 
+        <!-- <center>
+          <img src="static/images/LPM_result.png"  width="1000">
+        </center> -->
+        <!-- Example Result -->
+        </div>
+        <!-- <h2 class="subtitle has-text-centered">Example Result</h2> -->
+        
+      </div>
+    </div>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-3">Quantitative Results</h2> -->
+        <div class="content has-text-justified">
+          <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
+              grid-gap: 10px; /* Adjust the gap between the divs */
+            }
+            .grid-item {
+              width: 100%;
+            }
+          </style>
+
+          <!-- <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <center><h3 class="title is-4">Ablation</h3></center>
+          <p>&nbsp;</p>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="compare" style="width: 467px; margin-right: 20px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/abla/00027-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/abla/00027-a-wo point addition.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="compare" style="width: 467px;">
+                <img class="slider-image" style="width: 467px" src="./static/image/abla/00027-a.png" />
+                <img class="slider-image" style="width: 467px" src="./static/image/abla/00027-a-wo reset.png" />
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 200px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>Ours without point addition</b></span>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div>
+                <span style="display: inline; text-align: left; margin-right: 195px;"><b>Ours</b></span>
+                <span style="display: inline; text-align: right;"><b>Ours without reset</b></span>
+              </div>
+            </div>
+          </div> -->
+          <body><br/></body>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title" style="text-align: center;">BibTeX</h2>
+    <pre><code>@inproceedings{AV_GS,
+    title={AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis},
+    author={Swapnil Bhosale, Haosen Yang, Diptesh Kanojia, Jiankang Deng, Xiatian Zhu},
+    journal={arXiv preprint arXiv:2406.04251},
+    year={2024}
+  }</code></pre>
+<p>&nbsp;</p>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Surrey-UPLab/Localized-Gaussian-Point-Management" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This great website template was borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>, <a
+              href="https://github.com/defocus-control/defocus-control.github.io">DC<sup>2</sup></a> and <a
+              href="https://github.com/oppo-us-research/NeuRBF-website">NeuRBF</a> and <a
+              href="https://github.com/oppo-us-research/SpacetimeGaussians-website">SpacetimeGaussians</a>!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
