@@ -205,7 +205,7 @@
           <center>
             <img src="./static/image/avgs_pipeline.png" width="1000"/>
           </center>        
-          <b> Overview of our proposed AV-GS.</b> Our model is comprised of a 3D Gaussian Splatting model G, an acoustic field network F and an audio binauralizer B. We first train $G$ to capture the scene geometry information. Next, we construct an audio-focused point representation G_a, with the location X and audio-guidance parameter a initialized by the pre-trained G. Then the acoustic field network F is used to process the a parameters for all the Gaussian points in the vicinity of the listener and the sound source (in the 3D space). The output from F is finally used to condition the audio binauralizer B, which transforms the mono audio to binaural audio w.r.t the listener and sound source location.
+          <b> Overview of our proposed AV-GS.</b> Our model is comprised of a 3D Gaussian Splatting model G, an acoustic field network F and an audio binauralizer B. We first train G to capture the scene geometry information. Next, we construct an audio-focused point representation G_a, with the location X and audio-guidance parameter a initialized by the pre-trained G. Then the acoustic field network F is used to process the a parameters for all the Gaussian points in the vicinity of the listener and the sound source (in the 3D space). The output from F is finally used to condition the audio binauralizer B, which transforms the mono audio to binaural audio w.r.t the listener and sound source location.
           <br> 
         <!-- <center>
           <img src="static/images/LPM_result.png"  width="1000">
