@@ -1,7 +1,7 @@
 ---
 layout: page
 name: Yuchao Li
-description: Multi-modal AI
+description: Visual GenAI
 img: assets/img/members/YuchaoLi.jpeg
 homepage: ./
 importance: 97
