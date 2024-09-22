@@ -1,7 +1,7 @@
 ---
 layout: page
 name: Kam Woh Ng
-description: With Tao Xiang and Yi-Zhe Song
+description: Explainable GenAI (W/ Tao Xiang)
 img: assets/img/members/kamwoh.jpg
 homepage: https://kamwoh.github.io
 importance: 97
