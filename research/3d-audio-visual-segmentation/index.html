@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="3D Audio-Visual Segmetation.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Audio-Visual Segmentation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="data:,">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">3D Audio-Visual Segmentation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Artem Sokolov,</span>
+              <span class="author-block">Swapnil Bhosale,</span>
+              <span class="author-block">Xiatian Zhu</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">University of Surrey, UK</span><br>
+              <span class="author-block">
+                <a href="https://www.audio-imagination.com/" target="_blank">
+                  NeurIPS 2024 Workshop on Audio Imagination
+                </a>
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Paper Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2411.02236v1" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2411.02236v1" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Surrey-UPLab/3D-Audio-Visual-Segmentation" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          3D Audio-Visual Segmentation generates consistent 3D masks of sounding objects using visual and spatial
+          audio cues.
+        </h2>
+        <!-- <h2 class="subtitle has-text-centered">
+         While 2D AVS creates 2D masks from mono audio in single images, 
+         our <b>3D AVS</b> generates consistent 3D masks of sounding objects using spatial (multichannel) audio.
+        </h2> -->
+        <!-- <div class="content has-text-centered">
+          <p>
+            3D Audio-Visual Segmentation generates consistent <b>3D masks</b> of sounding objects using <b>spatial</b> audio.
+          </p>
+        </div> -->
+        <div class="image-container">
+          <img src="./static/images/2d_avs_vs_3d_avs.png" alt="Description of image" class="teaser-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Recognizing the sounding objects in scenes is a longstanding objective in embodied AI, with diverse
+              applications in robotics and AR/VR/MR.
+              To that end, Audio-Visual Segmentation (AVS), taking as condition an audio signal to identify the masks of
+              the target sounding objects in an
+              input image with synchronous camera and microphone sensors, has been recently advanced. However, this
+              paradigm is still insufficient for
+              real-world operation, as the mapping from 2D images to 3D scenes is missing. To address this fundamental
+              limitation, we introduce a novel research problem,
+              3D Audio-Visual Segmentation, extending the existing AVS to the 3D output space. This problem poses more
+              challenges due to variations in camera extrinsics,
+              audio scattering, occlusions, and diverse acoustics across sounding object categories. To facilitate this
+              research, we create the very first simulation based benchmark,
+              3DAVS-S34-O7, providing photorealistic 3D scene environments with grounded spatial audio under
+              single-instance and multi-instance settings, across 34 scenes and 7 object categories.
+              This is made possible by re-purposing the Habitat simulator to generate comprehensive annotations of
+              sounding object locations and corresponding 3D masks.
+              Subsequently, we propose a new approach, EchoSegnet, characterized by integrating the ready-to-use
+              knowledge from pretrained 2D audio-visual foundation models synergistically with
+              3D visual scene representation through spatial audio-aware mask alignment and refinement. Extensive
+              experiments demonstrate that EchoSegnet can effectively segment sounding objects
+              in 3D space on our new benchmark, representing a significant advancement in the field of embodied AI.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">3DAVS-S34-O7 Dataset</h2>
+        <p class="intro-text has-text-justified" style="margin-bottom: 1rem;">
+          Our proposed dataset is profoundly motivated towards simulating real-world indoor scenes,
+          in terms of the visual quality of the scenes as well as the spatial acoustic response generated by the objects
+          placed within it. The dataset is divided into two subsets: <i>single-instance</i> and a more challenging
+          <i>multi-instance</i>.
+          In the <i>multi-instance</i> subset, several instances of the sounding object are present, but only one
+          instance is emitting sound.
+          In total, we present 34 scenes across 7 sound-emitting object categories.
+        </p>
+
+        <!-- Videos -->
+        <div class="columns is-centered">
+          <!-- single-instance -->
+          <div class="column">
+            <div class="content">
+              <p>
+                <!-- Sample from <i>single-instance</i> set (shortened):<br> -->
+                A <b>microwave</b> is <b>beeping</b> to indicate it has finished.
+              </p>
+              <video id="single-instance" controls playsinline preload="auto" height="100%">
+                <source src="./static/videos/single_microwave.mov" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- multi-instance -->
+          <div class="column">
+            <div class="content">
+              <p>
+                <!-- Sample from <i>multi-instance</i> set (shortened):<br> -->
+                <b>Two phones</b> are in the room, and <b>one</b> of them is <b>ringing</b>.
+              </p>
+              <video id="multi-instance" controls playsinline preload="auto" height="100%">
+                <source src="./static/videos/multi_telephones.mov" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          window.addEventListener('load', function () {
+            document.getElementById('single-instance').currentTime = 0;
+            document.getElementById('multi-instance').currentTime = 0;
+          });
+        </script>
+
+        <p class="has-text-justified" style="margin-bottom: 1rem;">
+          To record a scene observation, we load a sampled scene from the Habitat-Matterport3D dataset into the
+          SoundSpaces 2.0. Next, we place a semantically relevant sounding object (for instance, bathroom<span
+            style="font-family: monospace;">&#8596;</span>washing
+          machine, kitchen<span style="font-family: monospace;">&#8596;</span>microwave, living room<span
+            style="font-family: monospace;">&#8596;</span>vacuum cleaner, etc.) which emits a sound based on a mono
+          audio. We capture 120 frames at a rate of one frame per second, symbolizing different positions along the
+          moving agent's path.
+        </p>
+        <div class="image-container">
+          <img src="./static/images/sounding_objects.png" alt="sounding objects" class="teaser-image">
+        </div>
+        <p class="has-text-justified" style="margin-top: 0rem;">
+          Commonly found indoor sound-emitting objects featured in our 3DAVS-S34-O7 dataset.
+        </p>
+      </div>
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+        <!-- Method. -->
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method</h2>
+          <div class="image-container">
+            <img src="./static/images/method.png" alt="Method" class="teaser-image">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              <b>Overview of our proposed EchoSegnet:</b> (a) 2D Audio-Visual Segmentation pipeline OWOD-BIND generates
+              2D masks.
+              (b) These masks are lifted into a 3D Gaussian Splatting scene representation using SAGD with a modified
+              voting strategy.
+              (d) The initial 3D segmentation may contain noise and ambiguities, as spatial relationships
+              between
+              objects and sound were not considered.
+              (c) To address this, we apply the novel Audio-Informed Spatial Refinement Module (AISRM).
+              (e) In the refined 3D segmentation, only the sound-emitting object instance is retained, and
+              noise is
+              filtered out.
+            </p>
+          </div>
+        </div>
+        <!--/ Method. -->
+      </div>
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem;">
+        <!-- Results. -->
+        <div class="column is-full-width">
+          <h2 class="title is-3">Results</h2>
+          <div class="image-container">
+            <img src="./static/images/results.png" alt="Results" class="teaser-image-quantiative-results">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Performance comparison of EchoSegnet (3D AVS) with and without Audio-Informed Spatial
+              Refinement Module
+              (AISRM), and comparison against 2D AVS and Sound Source Localisation
+              pipelines on both subsets of the 3DAVS-S34-O7 benchmark.
+            </p>
+          </div>
+          <div class="image-container">
+            <img src="./static/images/qualitative_results.png" alt="Qualitative results" class="teaser-image">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Left: (Scene a) Qualitative comparison of EchoSegnet performance with and without
+              Audio-Informed Spatial
+              Refinement Module (AISRM),
+              illustrated through projected 3D Gaussian Splatting scene representation and renderings. Right: Comparison
+              between DenseAV
+              (SSL),
+              OWOD-BIND (2D AVS) and EchoSegnet. (Scene b) OWOD-BIND incorrectly
+              segments the non-sound-emitting coffee machine. (Scene c) Both SSL and 2D AVS fail to handle
+              a complex
+              scenario
+              where only a small part of the sound-emitting telephone is present in the view, whereas
+              EchoSegnet
+              successfully addresses this challenge.
+            </p>
+          </div>
+        </div>
+        <!--/ Results. -->
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{sokolov20243daudiovisualsegmentation,
+    title     = {3D Audio-Visual Segmentation},
+    author    = {Sokolov, Artem and Bhosale, Swapnil and Zhu, Xiatian},
+    booktitle = {Audio Imagination: NeurIPS 2024 Workshop AI-Driven Speech, Music, and Sound Generation},
+    year      = {2024}
+  }</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              The source code of this website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io"
+                target="_blank">Nerfies</a>, we thank authors for sharing it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
