@@ -1,7 +1,7 @@
 ---
 layout: page
 name: Tian Zhang
-description: Composition GenAI (Feb - Aug 2024)
+description: Composition GenAI (02-08, 2024)
 img: assets/img/members/tian.png
 homepage: ./
 importance: 97
