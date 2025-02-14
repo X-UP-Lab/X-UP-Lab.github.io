@@ -1,7 +1,7 @@
 ---
 layout: page
 name: Deyin Liu
-description: Visiting scholar
+description: Video GenAI
 img: assets/img/members/deyin_liu.jpg
 homepage: 
 importance: 96
