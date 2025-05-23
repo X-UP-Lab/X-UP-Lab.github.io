@@ -1,7 +1,7 @@
 ---
 layout: page
 name: Kam Woh Ng
-description: Explainable GenAI (W/ Tao Xiang)
+description: Explainable GenAI
 img: assets/img/members/kamwoh.jpg
 homepage: https://kamwoh.github.io
 importance: 94
