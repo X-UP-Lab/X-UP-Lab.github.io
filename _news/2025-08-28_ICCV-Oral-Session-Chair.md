@@ -1,0 +1,7 @@
+---
+layout: post
+date: 2025-08-28 12:59:00-0400
+inline: true
+---
+
+Serving as Oral Session Chair for [IEEE International Conference on Computer Vision, ICCV 2025](https://iccv.thecvf.com)
