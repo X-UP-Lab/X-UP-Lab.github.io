@@ -20,7 +20,7 @@ nav_order: 3
 ### Associate Editor
 * **[IEEE Transactions on Multimedia (TMM)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046)**
 * **[Neurocomputing](https://www.sciencedirect.com/journal/neurocomputing)**  
-* **[Frontiers in Computer Science](https://www.frontiersin.org/journals/computer-science)**
+* **[Frontiers in Computer Science, Computer Vision](https://www.frontiersin.org/journals/computer-science)**
 
 ### Workshop Organization
 
