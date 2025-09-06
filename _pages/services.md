@@ -11,7 +11,7 @@ nav_order: 3
 * **[ICLR 2026](https://iclr.cc/Conferences/2026)** 
 * **[NeurIPS 2025](https://neurips.cc/Conferences/2025)**
 * **[ICCV 2025](https://iccv.thecvf.com/)**
-* **[ICME 2025](https://www.2025.ieeeicme.org/)**
+* **[ICME 2025](https://2025.ieeeicme.org/)**
 * **[ICASSP 2025](https://2025.ieeeicassp.org/)**
 
 ### Session Chair
