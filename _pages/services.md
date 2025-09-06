@@ -1,5 +1,5 @@
 ---
-layout: page    # Use same layout as your other pages
+layout: default    # Use same layout as your other pages
 title: Services
 permalink: /services/
 nav: true
