@@ -2,6 +2,8 @@
 layout: default    # Use same layout as your other pages
 title: Services
 permalink: /services/
+nav: true
+nav_order: 3
 ---
 
 ## Area Chair
