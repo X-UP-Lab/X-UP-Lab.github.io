@@ -1,10 +1,5 @@
 ---
-layout: page
-permalink: /services/
+layout: default    # Use same layout as your other pages
 title: Services
-description:
-years:
-nav: true
-nav_order: 3
+permalink: /services/
 ---
-<!-- _pages/services.md -->
