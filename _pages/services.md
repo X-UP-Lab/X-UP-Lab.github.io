@@ -17,6 +17,9 @@ nav_order: 3
 ### Session Chair
 * [ICCV 2025](https://iccv.thecvf.com/)
 
+### Workshop Chair
+* AVSS 2027
+
 ### Associate Editor
 * [IEEE Transactions on Multimedia (TMM)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046)
 * [Neurocomputing](https://www.sciencedirect.com/journal/neurocomputing)
