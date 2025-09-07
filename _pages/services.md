@@ -12,7 +12,7 @@ nav_order: 3
 * [NeurIPS 2025](https://neurips.cc/Conferences/2025)
 * [ICCV 2025](https://iccv.thecvf.com/)
 * [ICME 2025](https://2025.ieeeicme.org/)
-* [ICASSP 2025](https://2025.ieeeicassp.org/)
+* ICASSP [2025](https://2025.ieeeicassp.org/), [2026](https://2026.ieeeicassp.org)
 
 ### Session Chair
 * [ICCV 2025](https://iccv.thecvf.com/)
