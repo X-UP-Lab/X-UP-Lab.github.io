@@ -25,19 +25,21 @@ nav_order: 3
 * [Neurocomputing](https://www.sciencedirect.com/journal/neurocomputing)
 * [Frontiers in Computer Science, Computer Vision](https://www.frontiersin.org/journals/computer-science)
 
-### Workshop Organization
+### Special Issue/Session Organization
 
-* Special Session on Towards Realistic 3D Deep Learning with Limited Supervision
+* Special Session on Towards Realistic 3D Deep Learning with Limited Supervision,
 *IEEE International Conference on Multimedia and Expo (ICME) 2025*
 
-* Third International Workshop on Big Surveillance Data Analysis and Processing
+### Workshop Organization
+
+* Third International Workshop on Big Surveillance Data Analysis and Processing,
 *IEEE International Conference on Multimedia and Expo (ICME) 2021*
 
-* Workshop on Big Surveillance Data Analysis and Processing
+* Workshop on Big Surveillance Data Analysis and Processing,
 *IEEE International Conference on Multimedia and Expo (ICME) 2020*
 
-* Workshop on Target Re-identification and Multi-Target Multi-Camera Tracking
+* Workshop on Target Re-identification and Multi-Target Multi-Camera Tracking,
 *IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2019*
 
-* Workshop on Human Detection and Re-Identification
+* Workshop on Human Detection and Re-Identification,
 *Asian Conference on Pattern Recognition (ACPR) 2017*
