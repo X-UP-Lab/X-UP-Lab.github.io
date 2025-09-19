@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: UP Lab # the website title (if blank, full name will be used instead)
-first_name: Universal Perception
+first_name:
 middle_name: 
-last_name: Lab
+last_name:
 email: xiatian.zhu@surrey.ac.uk
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Universal Perception Lab at Surrey Institute for People-Centred Artificial Intelligence, CVSSP, University of Surrey
@@ -40,7 +40,7 @@ navbar_fixed: true
 footer_fixed: false
 
 # Dimensions
-max_width: 88% # 1080px
+max_width: 95% # 1080px
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -65,7 +65,7 @@ orcid_id: 0000-0002-9284-2955 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
-research_gate_profile: # your profile on ResearchGate
+research_gate_profile: https://www.researchgate.net/profile/Xiatian-Zhu # your profile on ResearchGate
 blogger_url: # your blogger URL
 work_url: # work page URL
 keybase_username: # your keybase user name
