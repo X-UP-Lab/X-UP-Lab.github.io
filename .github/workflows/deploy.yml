@@ -29,6 +29,8 @@ jobs:
           ${{ runner.os }}-gems-
     - name: Install deps
       run: |
+        sudo apt-get update
+        sudo apt-get install -y imagemagick libmagickwand-dev
         gem update
         gem install bundler
         bundle config path vendor/bundle
