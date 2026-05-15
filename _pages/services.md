@@ -21,9 +21,10 @@ nav_order: 3
 * AVSS 2027
 
 ### Associate Editor
-* [IEEE Transactions on Multimedia (TMM)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046)
+* [Transactions on Machine Learning Research](https://jmlr.org/tmlr/) (2026 - )
+* [IEEE Transactions on Multimedia (TMM)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046) (2025 - )
 * [Neurocomputing](https://www.sciencedirect.com/journal/neurocomputing) (2024 - 2026)
-* [Frontiers in Computer Science, Computer Vision](https://www.frontiersin.org/journals/computer-science)
+* [Frontiers in Computer Science, Computer Vision](https://www.frontiersin.org/journals/computer-science) (2024 -)
 
 ### Special Issue/Session Organization
 
