@@ -22,7 +22,7 @@ nav_order: 3
 
 ### Associate Editor
 * [IEEE Transactions on Multimedia (TMM)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046)
-* [Neurocomputing](https://www.sciencedirect.com/journal/neurocomputing)
+* [Neurocomputing](https://www.sciencedirect.com/journal/neurocomputing) (2024 - 2026)
 * [Frontiers in Computer Science, Computer Vision](https://www.frontiersin.org/journals/computer-science)
 
 ### Special Issue/Session Organization
