@@ -8,9 +8,11 @@ nav_order: 3
 
 ### Area Chair
 * [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026)
-* [ICLR 2026](https://iclr.cc/Conferences/2026)
-* [NeurIPS 2025](https://neurips.cc/Conferences/2025)
+* [ICLR 2026](https://iclr.cc/Conferences/2026), 2027
+* [NeurIPS 2025](https://neurips.cc/Conferences/2025), 2026
 * [ICCV 2025](https://iccv.thecvf.com/)
+* [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)
+* [EMNLP 2026 Industry Track](https://2026.emnlp.org/calls/industry_track/) 
 * [ICME 2025](https://2025.ieeeicme.org/)
 * ICASSP [2025](https://2025.ieeeicassp.org/), [2026](https://2026.ieeeicassp.org)
 
