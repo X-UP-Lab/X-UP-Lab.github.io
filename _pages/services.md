@@ -7,7 +7,7 @@ nav_order: 3
 ---
 
 ### Area Chair
-* [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026)
+* [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026), 2027
 * [ICLR 2026](https://iclr.cc/Conferences/2026), 2027
 * [NeurIPS 2025](https://neurips.cc/Conferences/2025), 2026
 * [ICCV 2025](https://iccv.thecvf.com/)
