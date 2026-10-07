@@ -20,7 +20,7 @@ Xiatian Zhu, a Reader (Associate Professor) affiliated with the [Surrey Institut
 
 He leads <i>The UP Lab</I>, dedicated to pioneering <b>Universal Physical and Super Intelligence</b>, building world models, continuous spacetime dynamics, and embodied agents that perceive, reason, plan, and execute physical actions far beyond human precision.
 
-AI is no longer bounded by passive perception or digital software. We unify multimodal sensing (vision, radar, LiDAR, audio, continuous physical signals) with hardware actuation to create closed-loop physical systems that understand physical laws, predict complex temporal dynamics, and interact safely with real-world environments.
+AI is no longer bounded by passive perception or digital software. We unify multimodal sensing (e.g., imagery, text, radar, LiDAR, audio, continuous physical signals) with hardware actuation to create closed-loop physical systems that understand physical laws, predict complex temporal dynamics, and interact safely with real-world environments.
 
 Guided by our commitment to people-centred AI, we ensure that next-generation physical super intelligence remains ethical, sustainable, and grounded in community needs across sciences, engineerings, industries, and importantly human/animal wellbeing.
 
