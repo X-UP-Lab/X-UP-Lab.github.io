@@ -24,7 +24,7 @@ AI is no longer bounded by passive perception or digital software. We unify mult
 
 Guided by our commitment to people-centred AI, we ensure that next-generation physical super intelligence remains ethical, sustainable, and grounded in community needs across sciences, engineerings, industries, and importantly human/animal wellbeing.
 
-Xiatian Zhu holds a Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/). He serves as an Associate Editor of the [IEEE Transactions on Multimedia](https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia) (TMM) and Action Editor for [Transactions on Machine Learning Research](https://jmlr.org/tmlr/) (TMLR). He also serves/served as an Area Chair of top conferences such as CVPR, ICCV, NeurIPS, and ICLR. He is a member of EPSRC's Peer Review College, and an IEEE Senior Member.
+Xiatian Zhu holds a Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/). He serves as an Associate Editor of the [IEEE Transactions on Multimedia](https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia) (TMM) and Action Editor for [Transactions on Machine Learning Research](https://jmlr.org/tmlr/) (TMLR). He also serves/served as an Area Chair of top conferences such as CVPR, ICCV, NeurIPS, ICLR, and AAAI. He is a member of EPSRC's Peer Review College, and an IEEE Senior Member.
 
 
 
