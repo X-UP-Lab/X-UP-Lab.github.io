@@ -16,7 +16,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Xiatian Zhu, a Reader (Associate Professor) affiliated with the [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence) and the [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-svision-speech-signal-processing) at the [University of Surrey](https://www.surrey.ac.uk/) in Guildford, UK.
+Xiatian Zhu, Reader (Associate Professor), affiliated with the [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence) and the [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-svision-speech-signal-processing) at the [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK.
 
 He leads <i>The UP Lab</I>, dedicated to pioneering <b>Universal Physical and Super Intelligence</b>, building world models, continuous spacetime dynamics, and embodied agents that perceive, reason, plan, and execute physical actions far beyond human precision.
 
