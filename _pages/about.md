@@ -16,15 +16,15 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Xiatian Zhu, Reader (Associate Professor), affiliated with the [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence) and the [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-svision-speech-signal-processing) at the [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK.
+Xiatian Zhu is a Reader (Associate Professor) affiliated with the [Surrey Institute for People-Centred Artificial Intelligence](https://www.surrey.ac.uk/artificial-intelligence) and the [Centre for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-svision-speech-signal-processing) at the [University of Surrey](https://www.surrey.ac.uk/), Guildford, UK.
 
-He leads <i>The UP Lab</I>, dedicated to pioneering <b>Universal Physical and Super Intelligence</b>, building world models, continuous spacetime dynamics, and embodied agents that perceive, reason, plan, and execute physical actions far beyond human precision.
+He leads <b>The UP Lab</b>, dedicated to pioneering <b>Universal Physical and Super Intelligence</b> -- building world models, continuous spacetime dynamics, and embodied agents that perceive, reason, plan, and execute physical actions far beyond human precision.
 
-AI is no longer bounded by passive perception or digital software. We unify multimodal sensing (e.g., imagery, text, radar, LiDAR, audio, continuous physical signals) with hardware actuation to create closed-loop physical systems that understand physical laws, predict complex temporal dynamics, and interact safely with real-world environments.
+AI is no longer bounded by passive perception or digital software. The UP Lab unifies multimodal sensing (including imagery, text, radar, LiDAR, audio, and continuous physical signals) with hardware actuation to create closed-loop physical systems that understand physical laws, predict complex temporal dynamics, and interact safely with real-world environments.
 
-Guided by our commitment to people-centred AI, we ensure that next-generation physical super intelligence remains ethical, sustainable, and grounded in community needs across sciences, engineerings, industries, and importantly human/animal wellbeing.
+Guided by our commitment to people-centred AI, we ensure that next-generation physical super intelligence remains ethical, sustainable, and grounded in community needs across the sciences, engineering, industries, and human and animal wellbeing
 
-Xiatian Zhu holds a Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/). He serves as an Associate Editor of the [IEEE Transactions on Multimedia](https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia) (TMM) and Action Editor for [Transactions on Machine Learning Research](https://jmlr.org/tmlr/) (TMLR). He also serves/served as an Area Chair of top conferences such as CVPR, ICCV, NeurIPS, ICLR, and AAAI. He is a member of EPSRC's Peer Review College, and an IEEE Senior Member.
+Xiatian Zhu holds a Ph.D. from the [Queen Mary University of London](https://www.qmul.ac.uk/). He serves as an Associate Editor of the [IEEE Transactions on Multimedia](https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia) (TMM) and Action Editor for [Transactions on Machine Learning Research](https://jmlr.org/tmlr/) (TMLR). He regularly serves as an Area Chair for premier machine learning and computer vision conferences, including CVPR, ICCV, NeurIPS, ICLR, and AAAI. He is a member of the EPSRC Peer Review College and an IEEE Senior Member.
 
 
 
