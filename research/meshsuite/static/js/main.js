@@ -450,33 +450,35 @@ function initCodeTabs() {
 /* -------------------------------------------------------------
  * 4. 3-Way Video Split Slider (Standard -> Dedicated -> Non-Engine)
  * ------------------------------------------------------------- */
+const VIDEO_BASE_URL = 'https://github.com/X-UP-Lab/X-UP-Lab.github.io/releases/download/v1.0-meshsuite-media';
+
 const TRI_VIDEO_DATA = {
   '2dts': {
     name: '2DTS (Bicycle)',
-    standard: 'static/videos/2dts/standard.mp4',
-    dedicated: 'static/videos/2dts/dedicated.mp4',
-    non_engine: 'static/videos/2dts/non-engine.mp4',
+    standard: `${VIDEO_BASE_URL}/2dts_standard.mp4`,
+    dedicated: `${VIDEO_BASE_URL}/2dts_dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/2dts_non-engine.mp4`,
     hasStandard: true
   },
   'triangle-splatting': {
     name: 'Triangle-Splatting (Bonsai)',
-    standard: 'static/videos/triangle-splatting/standard.mp4',
-    dedicated: 'static/videos/triangle-splatting/dedicated.mp4',
-    non_engine: 'static/videos/triangle-splatting/non-engine.mp4',
+    standard: `${VIDEO_BASE_URL}/triangle-splatting_standard.mp4`,
+    dedicated: `${VIDEO_BASE_URL}/triangle-splatting_dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/triangle-splatting_non-engine.mp4`,
     hasStandard: true
   },
   'mesh-splatting': {
     name: 'MeshSplatting (Garden)',
-    standard: 'static/videos/mesh-splatting/standard.mp4',
-    dedicated: 'static/videos/mesh-splatting/dedicated.mp4',
-    non_engine: 'static/videos/mesh-splatting/non-engine.mp4',
+    standard: `${VIDEO_BASE_URL}/mesh-splatting_standard.mp4`,
+    dedicated: `${VIDEO_BASE_URL}/mesh-splatting_dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/mesh-splatting_non-engine.mp4`,
     hasStandard: true
   },
   'diffsoup': {
     name: 'DiffSoup (Stump)',
     standard: '',
-    dedicated: 'static/videos/diffsoup/dedicated.mp4',
-    non_engine: 'static/videos/diffsoup/non-engine.mp4',
+    dedicated: `${VIDEO_BASE_URL}/diffsoup_dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/diffsoup_non-engine.mp4`,
     hasStandard: false
   }
 };

@@ -10,3 +10,8 @@ Gemfile.lock
 vendor
 
 .vscode/launch.json
+
+# Large research video assets (hosted externally on GitHub Releases)
+research/meshsuite/static/videos/**/*.mp4
+research/meshsuite/static/videos/*.mp4
+
