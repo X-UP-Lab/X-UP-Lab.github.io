@@ -1,0 +1,510 @@
+{
+  "datasets": {
+    "mip360": {
+      "name": "Mip-NeRF 360",
+      "type": "Real unbounded scenes",
+      "scenes": [
+        "bicycle",
+        "flowers",
+        "garden",
+        "stump",
+        "treehill",
+        "room",
+        "counter",
+        "kitchen",
+        "bonsai"
+      ],
+      "results": [
+        {
+          "method": "3DGS",
+          "type": "Gaussian Baseline",
+          "non_engine": {
+            "psnr": 27.21,
+            "ssim": 0.815,
+            "lpips": 0.214,
+            "fps": 109
+          },
+          "standard": null,
+          "dedicated": null
+        },
+        {
+          "method": "2DGS",
+          "type": "Gaussian Baseline (TSDF Mesh)",
+          "non_engine": {
+            "psnr": 26.79,
+            "ssim": 0.796,
+            "lpips": 0.252,
+            "fps": 38
+          },
+          "standard": {
+            "psnr": 12.7,
+            "ssim": 0.311,
+            "lpips": 0.594,
+            "fps": 2778,
+            "p50": 0.4,
+            "p95": 0.4,
+            "render_mem": 54,
+            "asset_size": "N/A"
+          },
+          "dedicated": null
+        },
+        {
+          "method": "2DTS",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 28.16,
+            "ssim": 0.841,
+            "lpips": 0.215,
+            "fps": 70,
+            "train_time": 46.1,
+            "peak_mem": 10069
+          },
+          "standard": {
+            "psnr": 12.52,
+            "ssim": 0.311,
+            "lpips": 0.661,
+            "fps": 3754,
+            "p50": 0.3,
+            "p95": 0.3,
+            "render_mem": 54,
+            "asset_size": 310
+          },
+          "dedicated": {
+            "psnr": 23.28,
+            "ssim": 0.699,
+            "lpips": 0.313,
+            "fps": 545,
+            "p50": 2.1,
+            "p95": 2.2,
+            "render_mem": 1140,
+            "asset_size": 310
+          }
+        },
+        {
+          "method": "Triangle-Splatting",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 27.13,
+            "ssim": 0.812,
+            "lpips": 0.227,
+            "fps": 94,
+            "train_time": 40.5,
+            "peak_mem": 18901
+          },
+          "standard": {
+            "psnr": 14.77,
+            "ssim": 0.246,
+            "lpips": 0.656,
+            "fps": 2294,
+            "p50": 0.5,
+            "p95": 0.5,
+            "render_mem": 54,
+            "asset_size": 622
+          },
+          "dedicated": {
+            "psnr": 22.96,
+            "ssim": 0.695,
+            "lpips": 0.301,
+            "fps": 70,
+            "p50": 3.8,
+            "p95": 4.0,
+            "render_mem": 1559,
+            "asset_size": 622
+          }
+        },
+        {
+          "method": "DiffSoup",
+          "type": "Neural Texture Soup",
+          "non_engine": {
+            "psnr": 23.54,
+            "ssim": 0.689,
+            "lpips": 0.322,
+            "fps": 168,
+            "train_time": 16.8,
+            "peak_mem": 23484
+          },
+          "standard": null,
+          "dedicated": {
+            "psnr": 23.15,
+            "ssim": 0.647,
+            "lpips": 0.331,
+            "fps": 1995,
+            "p50": 0.5,
+            "p95": 0.6,
+            "render_mem": 288,
+            "asset_size": 247
+          }
+        },
+        {
+          "method": "MeshSplatting",
+          "type": "Indexed Delaunay Mesh",
+          "non_engine": {
+            "psnr": 24.72,
+            "ssim": 0.729,
+            "lpips": 0.365,
+            "fps": 38,
+            "train_time": 41.7,
+            "peak_mem": 23134
+          },
+          "standard": {
+            "psnr": 19.83,
+            "ssim": 0.491,
+            "lpips": 0.518,
+            "fps": 943,
+            "p50": 1.1,
+            "p95": 1.1,
+            "render_mem": 54,
+            "asset_size": 468
+          },
+          "dedicated": {
+            "psnr": 22.52,
+            "ssim": 0.589,
+            "lpips": 0.457,
+            "fps": 157,
+            "p50": 6.4,
+            "p95": 6.6,
+            "render_mem": 927,
+            "asset_size": 468
+          }
+        }
+      ]
+    },
+    "tnt": {
+      "name": "Tanks and Temples",
+      "type": "Outdoor real captures",
+      "scenes": [
+        "train",
+        "truck"
+      ],
+      "results": [
+        {
+          "method": "3DGS",
+          "type": "Gaussian Baseline",
+          "non_engine": {
+            "psnr": 23.74,
+            "ssim": 0.853,
+            "lpips": 0.169,
+            "fps": 129
+          },
+          "standard": null,
+          "dedicated": null
+        },
+        {
+          "method": "2DGS",
+          "type": "Gaussian Baseline (TSDF Mesh)",
+          "non_engine": {
+            "psnr": 23.21,
+            "ssim": 0.832,
+            "lpips": 0.211,
+            "fps": 92
+          },
+          "standard": {
+            "psnr": 16.1,
+            "ssim": 0.525,
+            "lpips": 0.515,
+            "fps": 4263,
+            "p50": 0.2,
+            "p95": 0.2,
+            "render_mem": 48,
+            "asset_size": "N/A"
+          },
+          "dedicated": null
+        },
+        {
+          "method": "2DTS",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 23.42,
+            "ssim": 0.853,
+            "lpips": 0.203,
+            "fps": 101,
+            "train_time": 25.9,
+            "peak_mem": 16061
+          },
+          "standard": {
+            "psnr": 12.4,
+            "ssim": 0.337,
+            "lpips": 0.629,
+            "fps": 5480,
+            "p50": 0.2,
+            "p95": 0.2,
+            "render_mem": 48,
+            "asset_size": 352
+          },
+          "dedicated": {
+            "psnr": 19.26,
+            "ssim": 0.646,
+            "lpips": 0.296,
+            "fps": 909,
+            "p50": 1.2,
+            "p95": 1.3,
+            "render_mem": 832,
+            "asset_size": 352
+          }
+        },
+        {
+          "method": "Triangle-Splatting",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 23.08,
+            "ssim": 0.856,
+            "lpips": 0.171,
+            "fps": 159,
+            "train_time": 24.5,
+            "peak_mem": 11157
+          },
+          "standard": {
+            "psnr": 11.08,
+            "ssim": 0.292,
+            "lpips": 0.661,
+            "fps": 3928,
+            "p50": 0.3,
+            "p95": 0.3,
+            "render_mem": 48,
+            "asset_size": 498
+          },
+          "dedicated": {
+            "psnr": 19.54,
+            "ssim": 0.719,
+            "lpips": 0.258,
+            "fps": 536,
+            "p50": 1.9,
+            "p95": 1.9,
+            "render_mem": 933,
+            "asset_size": 498
+          }
+        },
+        {
+          "method": "DiffSoup",
+          "type": "Neural Texture Soup",
+          "non_engine": {
+            "psnr": 18.9,
+            "ssim": 0.685,
+            "lpips": 0.352,
+            "fps": 226,
+            "train_time": 15.4,
+            "peak_mem": 23890
+          },
+          "standard": null,
+          "dedicated": {
+            "psnr": 17.02,
+            "ssim": 0.606,
+            "lpips": 0.402,
+            "fps": 2388,
+            "p50": 0.4,
+            "p95": 0.4,
+            "render_mem": 276,
+            "asset_size": 258
+          }
+        },
+        {
+          "method": "MeshSplatting",
+          "type": "Indexed Delaunay Mesh",
+          "non_engine": {
+            "psnr": 20.53,
+            "ssim": 0.756,
+            "lpips": 0.319,
+            "fps": 66,
+            "train_time": 24.1,
+            "peak_mem": 21321
+          },
+          "standard": {
+            "psnr": 14.38,
+            "ssim": 0.506,
+            "lpips": 0.49,
+            "fps": 1528,
+            "p50": 0.7,
+            "p95": 0.7,
+            "render_mem": 48,
+            "asset_size": 390
+          },
+          "dedicated": {
+            "psnr": 16.09,
+            "ssim": 0.587,
+            "lpips": 0.435,
+            "fps": 300,
+            "p50": 3.4,
+            "p95": 3.5,
+            "render_mem": 596,
+            "asset_size": 390
+          }
+        }
+      ]
+    },
+    "dtu": {
+      "name": "DTU",
+      "type": "Object-centric scans with ground truth geometry",
+      "scenes": [
+        "15 reference scans"
+      ],
+      "results": [
+        {
+          "method": "2DTS",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 29.66,
+            "ssim": 0.951,
+            "lpips": 0.11,
+            "fps": 312,
+            "train_time": 21.2,
+            "peak_mem": 2470,
+            "cd": 0.63
+          }
+        },
+        {
+          "method": "Triangle-Splatting",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 27.78,
+            "ssim": 0.944,
+            "lpips": 0.08,
+            "fps": 165,
+            "train_time": 13.1,
+            "peak_mem": 4163,
+            "cd": 1.27
+          }
+        },
+        {
+          "method": "MeshSplatting",
+          "type": "Indexed Delaunay Mesh",
+          "non_engine": {
+            "psnr": 27.82,
+            "ssim": 0.933,
+            "lpips": 0.106,
+            "fps": 114,
+            "train_time": 10.7,
+            "peak_mem": 7680,
+            "cd": 0.8
+          }
+        },
+        {
+          "method": "DiffSoup",
+          "type": "Neural Texture Soup",
+          "non_engine": {
+            "psnr": 17.91,
+            "ssim": 0.76,
+            "lpips": 0.263,
+            "fps": 170,
+            "train_time": 14.5,
+            "peak_mem": 23930,
+            "cd": 3.89
+          }
+        }
+      ]
+    },
+    "nerf_synthetic": {
+      "name": "NeRF-Synthetic (Blender)",
+      "type": "Synthetic 360 scenes",
+      "scenes": [
+        "chair",
+        "drums",
+        "ficus",
+        "hotdog",
+        "lego",
+        "materials",
+        "mic",
+        "ship"
+      ],
+      "results": [
+        {
+          "method": "2DTS",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 33.65,
+            "ssim": 0.97,
+            "lpips": 0.034,
+            "fps": 126,
+            "train_time": 16.3,
+            "peak_mem": 3172
+          }
+        },
+        {
+          "method": "Triangle-Splatting",
+          "type": "Triangle Soup",
+          "non_engine": {
+            "psnr": 29.87,
+            "ssim": 0.956,
+            "lpips": 0.055,
+            "fps": 243,
+            "train_time": 19.1,
+            "peak_mem": 12257
+          }
+        },
+        {
+          "method": "MeshSplatting",
+          "type": "Indexed Delaunay Mesh",
+          "non_engine": {
+            "psnr": 29.5,
+            "ssim": 0.945,
+            "lpips": 0.071,
+            "fps": 86,
+            "train_time": 13.4,
+            "peak_mem": 23386
+          }
+        },
+        {
+          "method": "DiffSoup",
+          "type": "Neural Texture Soup",
+          "non_engine": {
+            "psnr": 28.65,
+            "ssim": 0.91,
+            "lpips": 0.076,
+            "fps": 371,
+            "train_time": 12.2,
+            "peak_mem": 16334
+          }
+        }
+      ]
+    }
+  },
+  "topology": [
+    {
+      "dataset": "Mip-NeRF 360",
+      "category": "Large, unbounded",
+      "vf_ratio": 0.523,
+      "valence": 6.49,
+      "bnd_edges_pct": 45.4,
+      "nm_edges_pct": 17.8,
+      "nm_verts_pct": 65.2,
+      "lcc_faces_pct": 69.9,
+      "lcc_area_pct": 68.9,
+      "components_k": 712.9
+    },
+    {
+      "dataset": "Tanks and Temples",
+      "category": "Large, unbounded",
+      "vf_ratio": 0.516,
+      "valence": 6.49,
+      "bnd_edges_pct": 46.1,
+      "nm_edges_pct": 18.2,
+      "nm_verts_pct": 66.5,
+      "lcc_faces_pct": 69.9,
+      "lcc_area_pct": 66.6,
+      "components_k": 442.8
+    },
+    {
+      "dataset": "DTU",
+      "category": "Object-centric",
+      "vf_ratio": 0.428,
+      "valence": 7.36,
+      "bnd_edges_pct": 41.2,
+      "nm_edges_pct": 22.2,
+      "nm_verts_pct": 72.7,
+      "lcc_faces_pct": 76.9,
+      "lcc_area_pct": 77.5,
+      "components_k": 43.3
+    },
+    {
+      "dataset": "NeRF-Synthetic",
+      "category": "Object-centric",
+      "vf_ratio": 0.339,
+      "valence": 8.59,
+      "bnd_edges_pct": 37.2,
+      "nm_edges_pct": 28.4,
+      "nm_verts_pct": 87.3,
+      "lcc_faces_pct": 80.4,
+      "lcc_area_pct": 80.4,
+      "components_k": 65.8
+    }
+  ]
+}

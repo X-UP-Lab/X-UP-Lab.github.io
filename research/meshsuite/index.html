@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeshSuite: A Unified Benchmark for Triangle- and Mesh-Based Neural Rendering</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="MeshSuite: The first unified benchmark and industrial game engine deployment framework for triangle- and mesh-based neural rendering (2DTS, Triangle Splatting, MeshSplatting, DiffSoup).">
+  <meta name="keywords" content="MeshSuite, MeshSplatBench, Triangle Splatting, Mesh Splatting, 2DTS, DiffSoup, 3D Gaussian Splatting, Unity Engine, Neural Rendering">
+  <meta name="author" content="Kaixuan Zhang, Minxian Li, Mingwu Ren, Xiatian Zhu">
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="MeshSuite: A Unified Benchmark for Triangle- and Mesh-Based Neural Rendering">
+  <meta property="og:description" content="Evaluating triangle-based radiance field reconstruction in research and industrial graphics engines.">
+  <meta property="og:image" content="static/images/framework4.png">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-brand">
+        <i class="fa-solid fa-cube text-primary"></i>
+        <span>MeshSuite</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#framework">Framework</a></li>
+        <li><a href="#comparison">Visual Demo</a></li>
+        <li><a href="#benchmarks">Benchmarks</a></li>
+        <li><a href="#topology">Mesh Topology</a></li>
+        <li><a href="#unity-integration">Unity Engine</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#quickstart">Code</a></li>
+        <li><a href="#bibtex">Citation</a></li>
+      </ul>
+      <a href="https://github.com/prinasi/MeshSuite" target="_blank" class="btn btn-secondary" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container container-narrow">
+      <div class="hero-venue-pill">
+        <i class="fa-solid fa-award"></i>
+        <span>Preprint arXiv:2609.01306</span>
+      </div>
+      
+      <h1 class="hero-title">
+        <span class="gradient-text">MeshSuite:</span> A Unified Benchmark for Triangle- and Mesh-Based Neural Rendering
+      </h1>
+      
+      <p class="hero-subtitle">
+        Bridging academic novel-view synthesis with real-time game engine deployment
+      </p>
+
+      <div class="hero-authors">
+        <span class="author-item">
+          <strong>Kaixuan Zhang</strong><sup>1</sup>
+        </span>
+        <span class="author-item">
+          <strong>Minxian Li</strong><sup>1,*</sup>
+        </span>
+        <span class="author-item">
+          <strong>Mingwu Ren</strong><sup>1</sup>
+        </span>
+        <span class="author-item">
+          <strong>Xiatian Zhu</strong><sup>2</sup>
+        </span>
+      </div>
+
+      <div class="hero-affiliations">
+        <span><sup>1</sup> Nanjing University of Science and Technology</span>
+        <span><sup>2</sup> University of Surrey</span>
+        <span><sup>*</sup> Corresponding author</span>
+      </div>
+
+      <div class="hero-links">
+        <a href="https://arxiv.org/abs/2609.01306" class="btn btn-secondary" target="_blank">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv:2609.01306
+        </a>
+        <a href="https://github.com/prinasi/MeshSuite" class="btn btn-secondary" target="_blank">
+          <i class="fa-brands fa-github"></i> Code & Benchmark
+        </a>
+        <a href="#unity-integration" class="btn btn-secondary">
+          <i class="fa-brands fa-unity"></i> Unity Engine
+        </a>
+        <button class="btn btn-accent copy-btn" data-copy-target="bibtex-content">
+          <i class="fa-solid fa-quote-right"></i> Copy BibTeX
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Teaser Section -->
+    <section class="teaser-section" id="framework">
+      <div class="teaser-card">
+        <img src="static/images/framework4.png" alt="MeshSuite Benchmark Architecture">
+        <div class="teaser-caption">
+          <strong>Figure 1 | The MeshSuite Framework Architecture:</strong>
+          The <code>Dataset Management</code> layer standardizes data formats (image resolution, camera-view alignment, and color channels). Triangle- and mesh-based splatting methods (2DTS, Triangle Splatting, MeshSplatting, DiffSoup) are unified in the <code>Algorithm Pool</code> and trained via <code>Model Training</code>. Trained models are systematically evaluated across three rendering paradigms: <strong>Non-Engine Render</strong> (native CUDA rasterizers), <strong>Standard Deployment</strong> (conventional opaque vertex-colored mesh in Unity), and <strong>Dedicated Deployment</strong> (method-specific Unity renderers preserving alpha blending and view-dependent appearance).
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways / Highlights Grid -->
+    <section>
+      <div class="highlights-grid">
+        <div class="highlight-card card-blue">
+          <div class="highlight-icon">⚠️</div>
+          <h3 class="highlight-title">The Deployment Gap</h3>
+          <p class="highlight-desc">
+            Deploying soup methods as standard opaque meshes in a game engine causes catastrophic visual collapse (up to <strong>15.6 dB PSNR drop</strong>). MeshSplatting loses the least due to indexed Delaunay geometry.
+          </p>
+        </div>
+
+        <div class="highlight-card card-orange">
+          <div class="highlight-icon">⚖️</div>
+          <h3 class="highlight-title">The Fidelity-Speed Tradeoff</h3>
+          <p class="highlight-desc">
+            Dedicated Unity shaders recover <strong>2.7–10.8 dB PSNR</strong> by retaining soft coverage and alpha compositing, but suffer a <strong>5×–33× framerate slowdown</strong> due to depth sorting overhead.
+          </p>
+        </div>
+
+        <div class="highlight-card card-green">
+          <div class="highlight-icon">🧩</div>
+          <h3 class="highlight-title">Topological Illusion</h3>
+          <p class="highlight-desc">
+            Shared vertex indexing does <em>not</em> ensure a valid manifold mesh. Structural audits reveal <strong>18–28% non-manifold edges</strong>, <strong>65–87% non-manifold vertices</strong>, and hundreds of thousands of disconnected shards.
+          </p>
+        </div>
+
+        <div class="highlight-card card-purple">
+          <div class="highlight-icon">🎮</div>
+          <h3 class="highlight-title">Unified Engine Pipeline</h3>
+          <p class="highlight-desc">
+            Includes a universal <code>.triasset</code> serialization layer and production Unity shaders supporting continuous alpha, view-dependent SH, and in-shader neural Micro-MLP texture decoding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section class="section" id="abstract">
+      <div class="section-header">
+        <span class="section-tag">Motivation & Summary</span>
+        <h2 class="section-title">Abstract</h2>
+      </div>
+      <div class="abstract-box">
+        <p>
+          Triangle- and mesh-based neural rendering aims to bridge neural scene representations and existing graphics engines (e.g., Unity, Blender) by leveraging <em>triangle</em> primitives compatible with standard rasterization hardware.
+          There have been several such methods driven by parallel efforts, developed and evaluated under inconsistent settings, with little or no comparison with each other; critically, most have never used graphics engines for evaluation nor considered deployability in practice — significantly undermining the objective and motivation.
+        </p>
+        <p>
+          To address these issues, we introduce <strong>MeshSuite</strong>, the first benchmark of its kind to enable systematic evaluation of graphics-engine deployment and Non-Engine Render for triangle- and mesh-based neural rendering methods. Importantly, our deployment protocol includes two engine deployment settings:
+        </p>
+        <ul style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.8;">
+          <li><strong>(1) Standard Deployment</strong> — a conventional opaque mesh pipeline with vertex colors and hardware Z-buffering;</li>
+          <li><strong>(2) Dedicated Deployment</strong> — method-specific engine implementations supporting retained appearance and compositing features (e.g., alpha blending), taking into account individual model characteristics.</li>
+        </ul>
+        <p>
+          For mesh splatting, we further propose a structural audit of exported surfaces, diagnosing topological and geometric integrity toward downstream graphics assets. From this benchmark, we validate that <strong><em>rasterizability is merely part of graphics readiness</em></strong>, and highlight the significance of assessing the graphics engine deployment process.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Qualitative Comparison: 4-Way Split Slider (Standard -> Dedicated -> Non-Engine -> GT) -->
+    <section class="section" id="comparison">
+      <div class="section-header">
+        <span class="section-tag">Interactive Visualizer</span>
+        <h2 class="section-title">4-Way Synchronized Image Split Comparison</h2>
+        <p class="section-subtitle">
+          Comparing novel-view synthesis across <strong>Standard Deployment</strong> &rarr; <strong>Dedicated Deployment</strong> &rarr; <strong>Non-Engine Render</strong> &rarr; <strong>Ground Truth</strong>. Drag the vertical divider lines to dynamically adjust the visible split regions!
+        </p>
+      </div>
+
+      <div class="tri-video-container" id="quad-img-container">
+        <!-- Control Header & Method Selector -->
+        <div class="tri-video-header">
+          <div class="scene-tabs" id="img-method-tabs">
+            <button class="scene-tab img-method-tab active" data-method="2dts">
+              🌿 2DTS (Bonsai)
+            </button>
+            <button class="scene-tab img-method-tab" data-method="triangle-splatting">
+              🌲 Triangle-Splatting (Treehill)
+            </button>
+            <button class="scene-tab img-method-tab" data-method="mesh-splatting">
+              🏡 MeshSplatting (Garden)
+            </button>
+            <button class="scene-tab img-method-tab" data-method="diffsoup">
+              🚲 DiffSoup (Bicycle)
+            </button>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span id="img-status-badge" class="badge badge-primary" style="font-weight: 600;">
+              Standard &rarr; Dedicated &rarr; Non-Engine &rarr; GT
+            </span>
+            <div class="view-mode-toggle">
+              <button class="view-mode-btn img-view-mode-btn active" data-mode="slider">
+                <i class="fa-solid fa-sliders"></i> Split Slider
+              </button>
+              <button class="view-mode-btn img-view-mode-btn" data-mode="grid">
+                <i class="fa-solid fa-table-cells"></i> 4-Way Grid
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Way Image Split Canvas -->
+        <div class="quad-img-canvas" id="quad-img-canvas">
+          <!-- Layer 4: Ground Truth (Rightmost: X3 -> 100%) -->
+          <div class="quad-img-layer quad-img-layer-gt" id="img-layer-gt">
+            <img id="img-view-gt" src="static/images/2dts/gt.png" alt="Ground Truth" draggable="false">
+          </div>
+
+          <!-- Layer 3: Non-Engine Render (X2 -> X3) -->
+          <div class="quad-img-layer quad-img-layer-ne" id="img-layer-ne">
+            <img id="img-view-ne" src="static/images/2dts/non-engine.png" alt="Non-Engine Render" draggable="false">
+          </div>
+
+          <!-- Layer 2: Dedicated Deployment (X1 -> X2) -->
+          <div class="quad-img-layer quad-img-layer-ded" id="img-layer-ded">
+            <img id="img-view-ded" src="static/images/2dts/dedicated.png" alt="Dedicated Deployment" draggable="false">
+          </div>
+
+          <!-- Layer 1: Standard Deployment (0% -> X1) -->
+          <div class="quad-img-layer quad-img-layer-std" id="img-layer-std">
+            <img id="img-view-std" src="static/images/2dts/standard.png" alt="Standard Deployment" draggable="false">
+          </div>
+
+          <!-- Divider 1: Between Standard and Dedicated -->
+          <div class="quad-img-divider quad-img-divider-1" id="img-divider-1" style="left: 25%;">
+            <div class="quad-img-divider-handle">
+              <i class="fa-solid fa-arrows-left-right"></i>
+              <span>Std | Ded</span>
+            </div>
+          </div>
+
+          <!-- Divider 2: Between Dedicated and Non-Engine -->
+          <div class="quad-img-divider quad-img-divider-2" id="img-divider-2" style="left: 50%;">
+            <div class="quad-img-divider-handle">
+              <i class="fa-solid fa-arrows-left-right"></i>
+              <span>Ded | Native</span>
+            </div>
+          </div>
+
+          <!-- Divider 3: Between Non-Engine and GT -->
+          <div class="quad-img-divider quad-img-divider-3" id="img-divider-3" style="left: 75%;">
+            <div class="quad-img-divider-handle">
+              <i class="fa-solid fa-arrows-left-right"></i>
+              <span>Native | GT</span>
+            </div>
+          </div>
+
+          <!-- Floating Region Badges -->
+          <div class="quad-region-badge" id="img-badge-std" style="left: 12.5%;">
+            <span class="badge-dot badge-dot-std"></span>
+            <span>Standard Deployment</span>
+          </div>
+
+          <div class="quad-region-badge" id="img-badge-ded" style="left: 37.5%;">
+            <span class="badge-dot badge-dot-ded"></span>
+            <span>Dedicated Deployment</span>
+          </div>
+
+          <div class="quad-region-badge" id="img-badge-ne" style="left: 62.5%;">
+            <span class="badge-dot badge-dot-ne"></span>
+            <span>Non-Engine Render</span>
+          </div>
+
+          <div class="quad-region-badge" id="img-badge-gt" style="left: 87.5%;">
+            <span class="badge-dot badge-dot-gt"></span>
+            <span>Ground Truth</span>
+          </div>
+        </div>
+
+        <!-- 4-Way Grid View (ordered Standard -> Dedicated -> Non-Engine -> GT) -->
+        <div id="quad-grid-view" class="comparison-grid-view" style="display: none;">
+          <div class="grid-column" id="grid-col-std">
+            <div class="grid-column-header" style="color: #ef4444;">
+              <span class="badge-dot badge-dot-std" style="display:inline-block; margin-right:4px;"></span> Standard Deployment
+            </div>
+            <img id="grid-col-img-std" src="static/images/2dts/standard.png" alt="Standard Deployment" draggable="false">
+          </div>
+          <div class="grid-column" id="grid-col-ded">
+            <div class="grid-column-header" style="color: #10b981;">
+              <span class="badge-dot badge-dot-ded" style="display:inline-block; margin-right:4px;"></span> Dedicated Deployment
+            </div>
+            <img id="grid-col-img-ded" src="static/images/2dts/dedicated.png" alt="Dedicated Deployment" draggable="false">
+          </div>
+          <div class="grid-column" id="grid-col-ne">
+            <div class="grid-column-header" style="color: #3b82f6;">
+              <span class="badge-dot badge-dot-ne" style="display:inline-block; margin-right:4px;"></span> Non-Engine Render
+            </div>
+            <img id="grid-col-img-ne" src="static/images/2dts/non-engine.png" alt="Non-Engine Render" draggable="false">
+          </div>
+          <div class="grid-column" id="grid-col-gt">
+            <div class="grid-column-header" style="color: #a855f7;">
+              <span class="badge-dot badge-dot-gt" style="display:inline-block; margin-right:4px;"></span> Ground Truth
+            </div>
+            <img id="grid-col-img-gt" src="static/images/2dts/gt.png" alt="Ground Truth" draggable="false">
+          </div>
+        </div>
+
+        <!-- DiffSoup Alert note (shown when DiffSoup is selected) -->
+        <div id="img-diffsoup-note" style="display: none; padding: 0.75rem 1.5rem; background: #fffbeb; border-bottom: 1px solid #fef3c7; font-size: 0.85rem; color: #92400e;">
+          <i class="fa-solid fa-circle-info" style="margin-right: 0.4rem;"></i>
+          <strong>DiffSoup Architecture:</strong> Encodes appearance as latent features evaluated by an in-shader neural Micro-MLP. Standard Deployment is unsupported (N/A); comparing <strong>Dedicated Deployment</strong> &rarr; <strong>Non-Engine Render</strong> &rarr; <strong>Ground Truth</strong>.
+        </div>
+
+        <!-- Bottom Controls Bar -->
+        <div class="tri-video-controls" style="padding: 0.85rem 1.5rem;">
+          <div class="tri-buttons-row">
+            <!-- Preset Splits -->
+            <div class="tri-ctrl-group">
+              <span class="tri-preset-label"><i class="fa-solid fa-table-columns"></i> Presets:</span>
+              <button class="tri-preset-btn img-preset-btn active" data-preset="quad-split">4-Way Split (25% each)</button>
+              <button class="tri-preset-btn img-preset-btn" data-preset="std-vs-ded">Std vs Ded (50/50)</button>
+              <button class="tri-preset-btn img-preset-btn" data-preset="ded-vs-ne">Ded vs Native (50/50)</button>
+              <button class="tri-preset-btn img-preset-btn" data-preset="ne-vs-gt">Native vs GT (50/50)</button>
+              <button class="tri-preset-btn img-preset-btn" data-preset="full-std">Standard Full</button>
+              <button class="tri-preset-btn img-preset-btn" data-preset="full-ded">Dedicated Full</button>
+              <button class="tri-preset-btn img-preset-btn" data-preset="full-ne">Non-Engine Full</button>
+              <button class="tri-preset-btn img-preset-btn" data-preset="full-gt">GT Full</button>
+            </div>
+
+            <!-- Fullscreen / Reset -->
+            <div class="tri-ctrl-group">
+              <button class="tri-ctrl-btn" id="img-reset-btn" title="Reset split sliders">
+                <i class="fa-solid fa-rotate-left"></i> Reset
+              </button>
+              <button class="tri-ctrl-btn" id="img-fullscreen-btn" title="Fullscreen view">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Explanation Bar -->
+        <div class="scene-explanation">
+          <span id="img-scene-badge" class="badge badge-2dts">2DTS</span>
+          <div id="img-scene-text">
+            <strong>The Soup Deployment Collapse:</strong> 2DTS relies heavily on alpha blending of independent triangle facelets. In Standard Deployment with hardware Z-buffering, overlapping semi-transparent triangles degenerate into opaque black shards (15.6 dB drop). Dedicated Deployment recovers multi-pass alpha compositing.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Deployment Settings -->
+    <section class="section" id="paradigms">
+      <div class="section-header">
+        <span class="section-tag">Evaluation Protocol</span>
+        <h2 class="section-title">The Three Evaluation Settings</h2>
+        <p class="section-subtitle">
+          Systematically dissecting the transition from research CUDA kernels to engine rasterization.
+        </p>
+      </div>
+
+      <div class="paradigms-grid">
+        <div class="paradigm-card">
+          <span class="paradigm-badge badge-gray">Baseline Setting</span>
+          <h3 class="paradigm-title">1. Non-Engine Render</h3>
+          <p class="paradigm-desc">
+            Evaluated directly using each method's official source research renderer (differentiable CUDA kernels). Serves as the upper-bound fidelity benchmark.
+          </p>
+          <ul class="paradigm-features">
+            <li><i class="fa-solid fa-check text-success"></i> Source paper rasterization</li>
+            <li><i class="fa-solid fa-check text-success"></i> Full continuous opacity</li>
+            <li><i class="fa-solid fa-xmark text-danger"></i> Not usable in game engines</li>
+          </ul>
+        </div>
+
+        <div class="paradigm-card">
+          <span class="paradigm-badge badge-red">Conventional Asset</span>
+          <h3 class="paradigm-title">2. Standard Deployment</h3>
+          <p class="paradigm-desc">
+            Converts trained models to conventional opaque meshes with static vertex colors rendered using standard hardware Z-buffering in Unity.
+          </p>
+          <ul class="paradigm-features">
+            <li><i class="fa-solid fa-bolt text-warning"></i> Blazing fast (up to 5,480 FPS)</li>
+            <li><i class="fa-solid fa-check text-success"></i> 100% plug-and-play CG asset</li>
+            <li><i class="fa-solid fa-xmark text-danger"></i> Massive quality loss (8–15 dB drop)</li>
+          </ul>
+        </div>
+
+        <div class="paradigm-card">
+          <span class="paradigm-badge badge-emerald">Engine Native</span>
+          <h3 class="paradigm-title">3. Dedicated Deployment</h3>
+          <p class="paradigm-desc">
+            Customized engine shaders in Unity implementing method-specific appearance (view-dependent SH, soft coverage, order-dependent alpha blending).
+          </p>
+          <ul class="paradigm-features">
+            <li><i class="fa-solid fa-check text-success"></i> Recovers 2.7–10.8 dB PSNR</li>
+            <li><i class="fa-solid fa-check text-success"></i> Micro-MLP shader decoding</li>
+            <li><i class="fa-solid fa-triangle-exclamation text-warning"></i> 5×–33× slower than Standard</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature Support Matrix Table -->
+      <div class="table-card">
+        <div class="table-header">
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main);">
+            <i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Engine Support and Retained Rendering Features (Table 1)
+          </h4>
+        </div>
+        <div class="table-responsive">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Method</th>
+                <th colspan="2" style="text-align: center; border-left: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">Standard Deployment</th>
+                <th colspan="5" style="text-align: center;">Dedicated Deployment (Method-Aware Unity Shaders)</th>
+              </tr>
+              <tr>
+                <th style="border-left: 1px solid var(--surface-border);">Support</th>
+                <th style="border-right: 1px solid var(--surface-border);">Appearance</th>
+                <th>View-dep. SH</th>
+                <th>Opacity</th>
+                <th>Soft Coverage</th>
+                <th>Depth Sort</th>
+                <th>Appearance Model</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>3DGS</strong> (Reference)</td>
+                <td style="border-left: 1px solid var(--surface-border);"><span class="badge badge-baseline">N/A</span></td>
+                <td style="border-right: 1px solid var(--surface-border);">—</td>
+                <td><span class="badge badge-baseline">N/A</span></td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>2DGS</strong> (TSDF Mesh)</td>
+                <td style="border-left: 1px solid var(--surface-border);"><span class="badge badge-baseline">Fallback</span></td>
+                <td style="border-right: 1px solid var(--surface-border);">baked color</td>
+                <td><span class="badge badge-baseline">N/A</span></td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>2DTS</strong></td>
+                <td style="border-left: 1px solid var(--surface-border);"><span class="badge badge-2dts">Fallback</span></td>
+                <td style="border-right: 1px solid var(--surface-border);">baked SH-DC</td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td>SH (Spherical Harmonics)</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td style="border-left: 1px solid var(--surface-border);"><span class="badge badge-ts">Fallback</span></td>
+                <td style="border-right: 1px solid var(--surface-border);">baked SH-DC</td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td>SH (Spherical Harmonics)</td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td style="border-left: 1px solid var(--surface-border);"><span class="badge badge-ms">Fallback</span></td>
+                <td style="border-right: 1px solid var(--surface-border);">baked SH-DC</td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td>—</td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td>SH (Spherical Harmonics)</td>
+              </tr>
+              <tr>
+                <td><strong>DiffSoup</strong></td>
+                <td style="border-left: 1px solid var(--surface-border);"><span class="badge badge-ds">N/A</span></td>
+                <td style="border-right: 1px solid var(--surface-border);">Requires decoder</td>
+                <td><i class="fa-solid fa-check text-success"></i></td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td><strong>In-Shader Micro-MLP</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Benchmark Explorer -->
+    <section class="section" id="benchmarks">
+      <div class="section-header">
+        <span class="section-tag">Empirical Results</span>
+        <h2 class="section-title">Benchmark Leaderboards</h2>
+        <p class="section-subtitle">
+          Standardized novel-view synthesis, throughput, memory allocation, and geometry quality.
+        </p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <div class="table-tabs">
+            <button class="table-tab active" data-target="tab-mip360">Mip-NeRF 360 (9 scenes)</button>
+            <button class="table-tab" data-target="tab-tnt">Tanks and Temples</button>
+            <button class="table-tab" data-target="tab-dtu">DTU (Geometry & CD)</button>
+            <button class="table-tab" data-target="tab-synthetic">NeRF-Synthetic</button>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Evaluated on single NVIDIA RTX 4090 GPU</span>
+        </div>
+
+        <!-- Mip-NeRF 360 Content -->
+        <div id="tab-mip360" class="benchmark-table-content table-responsive">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Method</th>
+                <th>Type</th>
+                <th>PSNR &uarr;</th>
+                <th>SSIM &uarr;</th>
+                <th>LPIPS &darr;</th>
+                <th>Throughput (FPS) &uarr;</th>
+                <th>GPU Latency (P50 ms) &darr;</th>
+                <th>VRAM / Alloc &darr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Non-Engine -->
+              <tr>
+                <td rowspan="6" style="vertical-align: middle; font-weight: 700; background: #f8fafc;">Non-Engine Render</td>
+                <td>3DGS (Reference)</td>
+                <td>Gaussian Splats</td>
+                <td>27.21</td>
+                <td>0.815</td>
+                <td>0.214</td>
+                <td>109</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>2DGS (Reference)</td>
+                <td>Surface Gaussians</td>
+                <td>26.79</td>
+                <td>0.796</td>
+                <td>0.252</td>
+                <td>38</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>2DTS</strong></td>
+                <td><span class="badge-method badge-2dts">Triangle Soup</span></td>
+                <td><span class="best-val">28.16</span></td>
+                <td><span class="best-val">0.841</span></td>
+                <td><span class="best-val">0.215</span></td>
+                <td>70</td>
+                <td>—</td>
+                <td>10,069 MiB (Train)</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td><span class="badge-method badge-ts">Triangle Soup</span></td>
+                <td>27.13</td>
+                <td>0.812</td>
+                <td>0.227</td>
+                <td>94</td>
+                <td>—</td>
+                <td>18,901 MiB (Train)</td>
+              </tr>
+              <tr>
+                <td><strong>DiffSoup</strong></td>
+                <td><span class="badge-method badge-ds">Neural Texture Soup</span></td>
+                <td>23.54</td>
+                <td>0.689</td>
+                <td>0.322</td>
+                <td><span class="best-val">168</span></td>
+                <td>—</td>
+                <td>23,484 MiB (Train)</td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td><span class="badge-method badge-ms">Indexed Mesh</span></td>
+                <td>24.72</td>
+                <td>0.729</td>
+                <td>0.365</td>
+                <td>38</td>
+                <td>—</td>
+                <td>23,134 MiB (Train)</td>
+              </tr>
+
+              <!-- Standard Deployment -->
+              <tr style="border-top: 2px solid var(--surface-border);">
+                <td rowspan="4" style="vertical-align: middle; font-weight: 700; background: #fff1f2;">Standard Deployment (Unity)</td>
+                <td>2DGS (TSDF)</td>
+                <td>Opaque Mesh</td>
+                <td>12.70</td>
+                <td>0.311</td>
+                <td>0.594</td>
+                <td>2,778</td>
+                <td>0.4 ms</td>
+                <td>54 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>2DTS</strong></td>
+                <td>Opaque Soup Shards</td>
+                <td>12.52</td>
+                <td>0.311</td>
+                <td>0.661</td>
+                <td><span class="best-val">3,754</span></td>
+                <td><span class="best-val">0.3 ms</span></td>
+                <td>54 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td>Opaque Soup Shards</td>
+                <td>14.77</td>
+                <td>0.246</td>
+                <td>0.656</td>
+                <td>2,294</td>
+                <td>0.5 ms</td>
+                <td>54 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td>Delaunay Mesh</td>
+                <td><span class="best-val">19.83</span></td>
+                <td><span class="best-val">0.491</span></td>
+                <td><span class="best-val">0.518</span></td>
+                <td>943</td>
+                <td>1.1 ms</td>
+                <td>54 MiB</td>
+              </tr>
+
+              <!-- Dedicated Deployment -->
+              <tr style="border-top: 2px solid var(--surface-border);">
+                <td rowspan="4" style="vertical-align: middle; font-weight: 700; background: #f0fdf4;">Dedicated Deployment (Unity)</td>
+                <td><strong>2DTS</strong></td>
+                <td>Custom Alpha Splat</td>
+                <td><span class="best-val">23.28</span></td>
+                <td><span class="best-val">0.699</span></td>
+                <td>0.313</td>
+                <td>545</td>
+                <td>2.1 ms</td>
+                <td>1,140 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td>Custom Window Splat</td>
+                <td>22.96</td>
+                <td>0.695</td>
+                <td><span class="best-val">0.301</span></td>
+                <td>70</td>
+                <td>3.8 ms</td>
+                <td>1,559 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>DiffSoup</strong></td>
+                <td>Compute Micro-MLP</td>
+                <td>23.15</td>
+                <td>0.647</td>
+                <td>0.331</td>
+                <td><span class="best-val">1,995</span></td>
+                <td><span class="best-val">0.5 ms</span></td>
+                <td><span class="best-val">288 MiB</span></td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td>Indexed Alpha Mesh</td>
+                <td>22.52</td>
+                <td>0.589</td>
+                <td>0.457</td>
+                <td>157</td>
+                <td>6.4 ms</td>
+                <td>927 MiB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Tanks and Temples Content -->
+        <div id="tab-tnt" class="benchmark-table-content table-responsive" style="display: none;">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Method</th>
+                <th>Type</th>
+                <th>PSNR &uarr;</th>
+                <th>SSIM &uarr;</th>
+                <th>LPIPS &darr;</th>
+                <th>FPS &uarr;</th>
+                <th>P50 Latency &darr;</th>
+                <th>Asset Size &darr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="4" style="font-weight:700; background: #f8fafc;">Non-Engine</td>
+                <td><strong>2DTS</strong></td>
+                <td>Triangle Soup</td>
+                <td><span class="best-val">23.42</span></td>
+                <td>0.853</td>
+                <td>0.203</td>
+                <td>101</td>
+                <td>—</td>
+                <td>352 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td>Triangle Soup</td>
+                <td>23.08</td>
+                <td><span class="best-val">0.856</span></td>
+                <td><span class="best-val">0.171</span></td>
+                <td>159</td>
+                <td>—</td>
+                <td>498 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>DiffSoup</strong></td>
+                <td>Neural Texture</td>
+                <td>18.90</td>
+                <td>0.685</td>
+                <td>0.352</td>
+                <td><span class="best-val">226</span></td>
+                <td>—</td>
+                <td>258 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td>Indexed Mesh</td>
+                <td>20.53</td>
+                <td>0.756</td>
+                <td>0.319</td>
+                <td>66</td>
+                <td>—</td>
+                <td>390 MiB</td>
+              </tr>
+
+              <tr style="border-top: 2px solid var(--surface-border);">
+                <td rowspan="3" style="font-weight:700; background: #fff1f2;">Standard (Unity)</td>
+                <td><strong>2DTS</strong></td>
+                <td>Opaque Mesh</td>
+                <td>12.40</td>
+                <td>0.337</td>
+                <td>0.629</td>
+                <td><span class="best-val">5,480</span></td>
+                <td><span class="best-val">0.2 ms</span></td>
+                <td>352 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td>Opaque Mesh</td>
+                <td>11.08</td>
+                <td>0.292</td>
+                <td>0.661</td>
+                <td>3,928</td>
+                <td>0.3 ms</td>
+                <td>498 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td>Delaunay Mesh</td>
+                <td><span class="best-val">14.38</span></td>
+                <td><span class="best-val">0.506</span></td>
+                <td><span class="best-val">0.490</span></td>
+                <td>1,528</td>
+                <td>0.7 ms</td>
+                <td>390 MiB</td>
+              </tr>
+
+              <tr style="border-top: 2px solid var(--surface-border);">
+                <td rowspan="4" style="font-weight:700; background: #f0fdf4;">Dedicated (Unity)</td>
+                <td><strong>2DTS</strong></td>
+                <td>Custom Splat</td>
+                <td>19.26</td>
+                <td>0.646</td>
+                <td>0.296</td>
+                <td>909</td>
+                <td>1.2 ms</td>
+                <td>352 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td>Custom Splat</td>
+                <td><span class="best-val">19.54</span></td>
+                <td><span class="best-val">0.719</span></td>
+                <td><span class="best-val">0.258</span></td>
+                <td>536</td>
+                <td>1.9 ms</td>
+                <td>498 MiB</td>
+              </tr>
+              <tr>
+                <td><strong>DiffSoup</strong></td>
+                <td>Micro-MLP</td>
+                <td>17.02</td>
+                <td>0.606</td>
+                <td>0.402</td>
+                <td><span class="best-val">2,388</span></td>
+                <td><span class="best-val">0.4 ms</span></td>
+                <td><span class="best-val">258 MiB</span></td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td>Indexed Alpha</td>
+                <td>16.09</td>
+                <td>0.587</td>
+                <td>0.435</td>
+                <td>300</td>
+                <td>3.4 ms</td>
+                <td>390 MiB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- DTU Content -->
+        <div id="tab-dtu" class="benchmark-table-content table-responsive" style="display: none;">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Geometry Accuracy (Chamfer Distance mm) &darr;</th>
+                <th>PSNR &uarr;</th>
+                <th>SSIM &uarr;</th>
+                <th>LPIPS &darr;</th>
+                <th>Render FPS &uarr;</th>
+                <th>Peak Train Mem &darr;</th>
+                <th>Train Time &darr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2DTS</strong></td>
+                <td><span class="best-val">0.63 mm</span></td>
+                <td><span class="best-val">29.66</span></td>
+                <td><span class="best-val">0.951</span></td>
+                <td>0.110</td>
+                <td><span class="best-val">312</span></td>
+                <td><span class="best-val">2,470 MiB</span></td>
+                <td>21.2 min</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td>1.27 mm</td>
+                <td>27.78</td>
+                <td>0.944</td>
+                <td><span class="best-val">0.080</span></td>
+                <td>165</td>
+                <td>4,163 MiB</td>
+                <td>13.1 min</td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td>0.80 mm</td>
+                <td>27.82</td>
+                <td>0.933</td>
+                <td>0.106</td>
+                <td>114</td>
+                <td>7,680 MiB</td>
+                <td><span class="best-val">10.7 min</span></td>
+              </tr>
+              <tr>
+                <td><strong>DiffSoup</strong></td>
+                <td>3.89 mm</td>
+                <td>17.91</td>
+                <td>0.760</td>
+                <td>0.263</td>
+                <td>170</td>
+                <td>23,930 MiB</td>
+                <td>14.5 min</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- NeRF Synthetic Content -->
+        <div id="tab-synthetic" class="benchmark-table-content table-responsive" style="display: none;">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Representation</th>
+                <th>PSNR &uarr;</th>
+                <th>SSIM &uarr;</th>
+                <th>LPIPS &darr;</th>
+                <th>FPS &uarr;</th>
+                <th>Peak Train Mem &darr;</th>
+                <th>Train Time &darr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2DTS</strong></td>
+                <td>Triangle Soup</td>
+                <td><span class="best-val">33.65</span></td>
+                <td><span class="best-val">0.970</span></td>
+                <td><span class="best-val">0.034</span></td>
+                <td>126</td>
+                <td><span class="best-val">3,172 MiB</span></td>
+                <td>16.3 min</td>
+              </tr>
+              <tr>
+                <td><strong>Triangle-Splatting</strong></td>
+                <td>Triangle Soup</td>
+                <td>29.87</td>
+                <td>0.956</td>
+                <td>0.055</td>
+                <td>243</td>
+                <td>12,257 MiB</td>
+                <td>19.1 min</td>
+              </tr>
+              <tr>
+                <td><strong>MeshSplatting</strong></td>
+                <td>Indexed Delaunay</td>
+                <td>29.50</td>
+                <td>0.945</td>
+                <td>0.071</td>
+                <td>86</td>
+                <td>23,386 MiB</td>
+                <td>13.4 min</td>
+              </tr>
+              <tr>
+                <td><strong>DiffSoup</strong></td>
+                <td>Neural Texture Soup</td>
+                <td>28.65</td>
+                <td>0.910</td>
+                <td>0.076</td>
+                <td><span class="best-val">371</span></td>
+                <td>16,334 MiB</td>
+                <td><span class="best-val">12.2 min</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality vs Efficiency Tradeoff Analysis -->
+    <section class="section" id="efficiency">
+      <div class="section-header">
+        <span class="section-tag">Trade-Off Analysis</span>
+        <h2 class="section-title">Quality vs. Efficiency Trade-Off</h2>
+        <p class="section-subtitle">
+          How image fidelity transitions to framerate across Standard, Dedicated, and Native renderers.
+        </p>
+      </div>
+
+      <div class="chart-showcase-grid">
+        <div class="chart-card">
+          <img src="static/images/quality_vs_efficiency_inverted.png" alt="Quality vs Efficiency Trade-off Curves">
+          <h4>Fidelity vs. Throughput Trajectories</h4>
+          <p>
+            Standard Deployment hits thousands of FPS (up to 5,480 FPS) via GPU rasterization, but at the cost of drastic visual drops. Dedicated Deployment shifts along the Pareto frontier, restoring near-native PSNR while operating at 70–2,388 FPS.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <img src="static/images/deployment_gap.png" alt="Deployment Gaps Across Settings">
+          <h4>Deployment Gaps Across Datasets</h4>
+          <p>
+            Illustrating the adaptation gap (&Delta;Q<sup>adapt</sup>), portability gap (&Delta;Q<sup>port</sup>), and overall deployment gap (&Delta;Q<sup>deploy</sup>). MeshSplatting displays the smallest portability gap due to shared vertex geometry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Structural Audit & Mesh Topology -->
+    <section class="section" id="topology">
+      <div class="section-header">
+        <span class="section-tag">Geometric & Topological Integrity</span>
+        <h2 class="section-title">Structural Audit of Exported Meshes</h2>
+        <p class="section-subtitle">
+          Does explicit triangle indexing ensure a viable 3D asset for physics, animation, and downstream CG pipelines?
+        </p>
+      </div>
+
+      <div class="teaser-card" style="margin-bottom: 2rem;">
+        <img src="static/images/topology_diagnostic.png" alt="Topology Diagnostics Diagram">
+        <div class="teaser-caption">
+          <strong>Figure 2 | Topology diagnostics for the structural audit:</strong>
+          (a) Boundary edges with 1 incident face; (b) Non-manifold edges with &gt;2 incident faces; (c) Non-manifold vertices with disconnected incident-face fans; (d) Edge-connected components representing disconnected face clusters.
+        </div>
+      </div>
+
+      <!-- Topology Diagnostics Table -->
+      <div class="table-card">
+        <div class="table-header">
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main);">
+            <i class="fa-solid fa-draw-polygon" style="color: var(--primary);"></i> Mesh Diagnostics for MeshSplatting across All Benchmark Datasets (Table 5)
+          </h4>
+        </div>
+        <div class="table-responsive">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Dataset</th>
+                <th colspan="2" style="text-align: center; border-right: 1px solid var(--surface-border);">Local Reuse</th>
+                <th colspan="3" style="text-align: center; border-right: 1px solid var(--surface-border);">Local Structure Defect Rate</th>
+                <th colspan="3" style="text-align: center;">Global Connectivity & Fragmentation</th>
+              </tr>
+              <tr>
+                <th>V / F Ratio</th>
+                <th style="border-right: 1px solid var(--surface-border);">Valence</th>
+                <th>Boundary Edges</th>
+                <th>Non-Manifold Edges &darr;</th>
+                <th style="border-right: 1px solid var(--surface-border);">Non-Manifold Verts &darr;</th>
+                <th>LCC Faces &uarr;</th>
+                <th>LCC Area &uarr;</th>
+                <th>Components (K) &darr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mip-NeRF 360</strong></td>
+                <td>0.523</td>
+                <td style="border-right: 1px solid var(--surface-border);">6.49</td>
+                <td>45.4%</td>
+                <td><span style="color: var(--danger); font-weight: 600;">17.8%</span></td>
+                <td style="border-right: 1px solid var(--surface-border); color: var(--danger); font-weight: 600;">65.2%</td>
+                <td>69.9%</td>
+                <td>68.9%</td>
+                <td><strong>712.9 K</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Tanks & Temples</strong></td>
+                <td>0.516</td>
+                <td style="border-right: 1px solid var(--surface-border);">6.49</td>
+                <td>46.1%</td>
+                <td><span style="color: var(--danger); font-weight: 600;">18.2%</span></td>
+                <td style="border-right: 1px solid var(--surface-border); color: var(--danger); font-weight: 600;">66.5%</td>
+                <td>69.9%</td>
+                <td>66.6%</td>
+                <td><strong>442.8 K</strong></td>
+              </tr>
+              <tr>
+                <td><strong>DTU</strong></td>
+                <td>0.428</td>
+                <td style="border-right: 1px solid var(--surface-border);">7.36</td>
+                <td>41.2%</td>
+                <td><span style="color: var(--danger); font-weight: 600;">22.2%</span></td>
+                <td style="border-right: 1px solid var(--surface-border); color: var(--danger); font-weight: 600;">72.7%</td>
+                <td>76.9%</td>
+                <td>77.5%</td>
+                <td><strong>43.3 K</strong></td>
+              </tr>
+              <tr>
+                <td><strong>NeRF-Synthetic</strong></td>
+                <td>0.339</td>
+                <td style="border-right: 1px solid var(--surface-border);">8.59</td>
+                <td>37.2%</td>
+                <td><span style="color: var(--danger); font-weight: 600;">28.4%</span></td>
+                <td style="border-right: 1px solid var(--surface-border); color: var(--danger); font-weight: 600;">87.3%</td>
+                <td>80.4%</td>
+                <td>80.4%</td>
+                <td><strong>65.8 K</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="background: white; border-radius: var(--radius-md); border: 1px solid var(--surface-border); padding: 1.25rem 1.5rem; font-size: 0.95rem; color: var(--text-sub);">
+        <i class="fa-solid fa-circle-info text-primary" style="margin-right: 0.5rem;"></i>
+        <strong>Key Insight:</strong> Even though MeshSplatting adopts indexed Delaunay meshes, <strong>up to 87.3% of vertices and 28.4% of edges are non-manifold</strong>, with hundreds of thousands of fragmented islands. Visual fidelity does not imply structural readiness for standard rigging, physics simulation, or subdivision.
+      </div>
+    </section>
+
+    <!-- Unity Integration & Architecture -->
+    <section class="section" id="unity-integration">
+      <div class="section-header">
+        <span class="section-tag">Industrial Engine Parity</span>
+        <h2 class="section-title">Unity Engine Integration & Shaders</h2>
+        <p class="section-subtitle">
+          Exporting feature-preserving <code>.triasset</code> formats and executing custom rendering passes.
+        </p>
+      </div>
+
+      <div class="teaser-card" style="margin-bottom: 2rem;">
+        <img src="static/images/implementation_overview2.png" alt="Software Architecture Overview">
+        <div class="teaser-caption">
+          <strong>Figure 3 | Software Architecture & Implementation Overview:</strong>
+          Unified modular pipelines spanning config-locked training, translation layers, export adapters, Unity runtime render passes, and automated headless batch evaluation.
+        </div>
+      </div>
+
+      <div class="unity-features-grid">
+        <div class="unity-feature-item">
+          <code>MethodSpecificSplat.shader</code>
+          <h5>Procedural Splatting Shader</h5>
+          <p>
+            Implements differentiable window evaluations, view-dependent spherical harmonics, and ordered multi-pass alpha blending directly in Unity's graphics pipeline.
+          </p>
+        </div>
+
+        <div class="unity-feature-item">
+          <code>MeshSplatIndexedMesh.shader</code>
+          <h5>Indexed Mesh Shader</h5>
+          <p>
+            Consumes shared vertex buffers and face index buffers with per-vertex spherical harmonics colors, bypassing redundant vertex transmissions.
+          </p>
+        </div>
+
+        <div class="unity-feature-item">
+          <code>DiffSoupMetal.shader</code>
+          <h5>In-Shader Micro-MLP Decoder</h5>
+          <p>
+            Evaluates neural texture latents inside a custom compute shader on Metal/Vulkan, executing lightweight MLP forward passes in real-time at ~2,000 FPS.
+          </p>
+        </div>
+
+        <div class="unity-feature-item">
+          <code>StandardVertexColorRaw.shader</code>
+          <h5>Standard Opaque Baseline</h5>
+          <p>
+            Evaluates conventional game-engine opaque mesh rendering with static vertex colors and hardware Z-buffering for standard deployment comparisons.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Showcase Section: 3-Way Synchronized Video Split Slider -->
+    <section class="section" id="videos">
+      <div class="section-header">
+        <span class="section-tag">Interactive Camera Trajectory Player</span>
+        <h2 class="section-title">3-Way Synchronized Video Split Comparison</h2>
+        <p class="section-subtitle">
+          Real-time camera orbit videos rendered across <strong>Standard Deployment</strong> &rarr; <strong>Dedicated Deployment</strong> &rarr; <strong>Non-Engine Render</strong>. Drag the vertical divider lines to dynamically adjust the visible split regions!
+        </p>
+      </div>
+
+      <div class="tri-video-container">
+        <!-- Control Header & Method Selector -->
+        <div class="tri-video-header">
+          <div class="scene-tabs" id="tri-video-method-tabs">
+            <button class="scene-tab tri-method-tab active" data-method="2dts">
+              🚲 2DTS (Bicycle)
+            </button>
+            <button class="scene-tab tri-method-tab" data-method="triangle-splatting">
+              🌿 Triangle-Splatting (Bonsai)
+            </button>
+            <button class="scene-tab tri-method-tab" data-method="mesh-splatting">
+              🏡 MeshSplatting (Garden)
+            </button>
+            <button class="scene-tab tri-method-tab" data-method="diffsoup">
+              🪵 DiffSoup (Stump)
+            </button>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span id="tri-video-status-badge" class="badge badge-primary" style="font-weight: 600;">
+              Standard &rarr; Dedicated &rarr; Non-Engine
+            </span>
+          </div>
+        </div>
+
+        <!-- 3-Way Video Canvas -->
+        <div class="tri-video-canvas" id="tri-video-canvas">
+          <!-- Layer 3: Non-Engine Render (Right region: X2 -> 100%) -->
+          <div class="tri-video-layer tri-video-layer-ne" id="tri-layer-ne">
+            <video id="tri-vid-ne" src="static/videos/2dts/non-engine.mp4" playsinline loop muted autoplay preload="auto"></video>
+          </div>
+
+          <!-- Layer 2: Dedicated Deployment (Middle region: X1 -> X2) -->
+          <div class="tri-video-layer tri-video-layer-ded" id="tri-layer-ded">
+            <video id="tri-vid-ded" src="static/videos/2dts/dedicated.mp4" playsinline loop muted autoplay preload="auto"></video>
+          </div>
+
+          <!-- Layer 1: Standard Deployment (Left region: 0% -> X1) -->
+          <div class="tri-video-layer tri-video-layer-std" id="tri-layer-std">
+            <video id="tri-vid-std" src="static/videos/2dts/standard.mp4" playsinline loop muted autoplay preload="auto"></video>
+          </div>
+
+          <!-- Divider 1: Between Standard and Dedicated -->
+          <div class="tri-divider" id="tri-divider-1" style="left: 33.33%;">
+            <div class="tri-divider-handle">
+              <i class="fa-solid fa-arrows-left-right"></i>
+              <span>Standard | Dedicated</span>
+            </div>
+          </div>
+
+          <!-- Divider 2: Between Dedicated and Non-Engine -->
+          <div class="tri-divider" id="tri-divider-2" style="left: 66.66%;">
+            <div class="tri-divider-handle">
+              <i class="fa-solid fa-arrows-left-right"></i>
+              <span>Dedicated | Non-Engine</span>
+            </div>
+          </div>
+
+          <!-- Floating Region Badges -->
+          <div class="tri-region-badge" id="tri-badge-std" style="left: 16.66%;">
+            <span class="badge-dot badge-dot-std"></span>
+            <span>Standard Deployment</span>
+          </div>
+
+          <div class="tri-region-badge" id="tri-badge-ded" style="left: 50%;">
+            <span class="badge-dot badge-dot-ded"></span>
+            <span>Dedicated Deployment</span>
+          </div>
+
+          <div class="tri-region-badge" id="tri-badge-ne" style="left: 83.33%;">
+            <span class="badge-dot badge-dot-ne"></span>
+            <span>Non-Engine Render</span>
+          </div>
+        </div>
+
+        <!-- DiffSoup Alert note (shown when DiffSoup is selected) -->
+        <div id="diffsoup-note" style="display: none; padding: 0.75rem 1.5rem; background: #fffbeb; border-bottom: 1px solid #fef3c7; font-size: 0.85rem; color: #92400e;">
+          <i class="fa-solid fa-circle-info" style="margin-right: 0.4rem;"></i>
+          <strong>DiffSoup Architecture:</strong> Encodes appearance as latent features evaluated by an in-shader neural Micro-MLP. Standard Deployment is unsupported (N/A); comparing <strong>Dedicated Deployment (Left)</strong> vs. <strong>Non-Engine Render (Right)</strong>.
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="tri-video-controls">
+          <!-- Timeline Progress Scrubber -->
+          <div class="tri-progress-row">
+            <button class="tri-ctrl-btn" id="tri-play-btn" style="padding: 0.35rem 0.75rem;">
+              <i class="fa-solid fa-pause" id="tri-play-icon"></i>
+            </button>
+            <input type="range" class="tri-seek-bar" id="tri-seek-bar" value="0" min="0" max="100" step="0.1">
+            <span class="tri-time-display" id="tri-time-display">00:00 / 00:40</span>
+          </div>
+
+          <!-- Bottom Control Bar -->
+          <div class="tri-buttons-row">
+            <!-- Preset Splits -->
+            <div class="tri-ctrl-group">
+              <span class="tri-preset-label"><i class="fa-solid fa-table-columns"></i> Presets:</span>
+              <button class="tri-preset-btn active" data-preset="three-way">1/3 Split (3-Way)</button>
+              <button class="tri-preset-btn" data-preset="std-vs-ded">Std vs Ded (50/50)</button>
+              <button class="tri-preset-btn" data-preset="ded-vs-ne">Ded vs Native (50/50)</button>
+              <button class="tri-preset-btn" data-preset="full-std">Standard Full</button>
+              <button class="tri-preset-btn" data-preset="full-ded">Dedicated Full</button>
+              <button class="tri-preset-btn" data-preset="full-ne">Non-Engine Full</button>
+            </div>
+
+            <!-- Playback Rate & Options -->
+            <div class="tri-ctrl-group">
+              <button class="tri-ctrl-btn" id="tri-mute-btn" title="Toggle audio">
+                <i class="fa-solid fa-volume-xmark" id="tri-mute-icon"></i>
+              </button>
+              <select id="tri-speed-select" class="tri-ctrl-btn" style="padding: 0.35rem 0.6rem; cursor: pointer;">
+                <option value="0.5">0.5x Speed</option>
+                <option value="1" selected>1.0x Normal</option>
+                <option value="1.5">1.5x Speed</option>
+                <option value="2">2.0x Fast</option>
+              </select>
+              <button class="tri-ctrl-btn" id="tri-fullscreen-btn" title="Fullscreen">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quickstart & Code Section -->
+    <section class="section" id="quickstart">
+      <div class="section-header">
+        <span class="section-tag">Getting Started</span>
+        <h2 class="section-title">Installation & CLI Usage</h2>
+        <p class="section-subtitle">
+          Reproduce training, export <code>.triasset</code> packages, and profile framerates in Unity.
+        </p>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-tabs">
+            <button class="code-tab-btn active" data-code="code-install">Installation</button>
+            <button class="code-tab-btn" data-code="code-train">Train & Render</button>
+            <button class="code-tab-btn" data-code="code-export">Unity Asset Export</button>
+            <button class="code-tab-btn" data-code="code-unity">Unity Native Eval</button>
+          </div>
+          <button class="copy-btn" data-copy-target="active-code-block">
+            <i class="fa-regular fa-copy"></i> Copy
+          </button>
+        </div>
+
+        <!-- Code Block: Install -->
+        <div id="code-install" class="code-block code-block-content">
+          <code id="active-code-block"># Clone the unified benchmark repository
+git clone https://github.com/prinasi/MeshSuite.git
+cd MeshSuite
+
+# Option 1: Conda Environment (Recommended)
+conda env create -f environment.yml
+conda activate msbench
+
+# Option 2: Pip editable install with compiled CUDA rasterizers
+pip install -e ".[dev,cuda]" --no-build-isolation</code>
+        </div>
+
+        <!-- Code Block: Train -->
+        <div id="code-train" class="code-block code-block-content" style="display: none;">
+          <code># Train, render novel views, and evaluate metrics in a unified CLI
+msbench train --config configs/triangle-splatting/mipnerf360/bicycle.yaml
+msbench render images --config configs/triangle-splatting/mipnerf360/bicycle.yaml
+msbench eval images --config configs/triangle-splatting/mipnerf360/bicycle.yaml
+
+# Train full dataset with helper script
+bash single_train.sh triangle-splatting mipnerf360/all 0</code>
+        </div>
+
+        <!-- Code Block: Export -->
+        <div id="code-export" class="code-block code-block-content" style="display: none;">
+          <code># Export method-preserving .triasset packages for Unity
+bash single_export_unity.sh triangle-splatting mipnerf360/all 0
+bash single_export_unity.sh mesh-splatting mipnerf360/garden 0
+
+# Serializes vertices, triangular topology, SH color coefficients, 
+# opacity compactness, and micro-MLP neural textures</code>
+        </div>
+
+        <!-- Code Block: Unity -->
+        <div id="code-unity" class="code-block code-block-content" style="display: none;">
+          <code># Headless Unity evaluation: captures frames, profiles P50/P95 latencies and FPS
+bash single_unity_eval.sh 2dts mipnerf360/bicycle 0 \
+  --unity "$UNITY" \
+  --unity-project unity
+
+# Render camera trajectory video in Unity
+bash single_unity_video.sh triangle-splatting mipnerf360/bicycle 0 \
+  --unity "$UNITY" \
+  --unity-project unity</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX & Citation Section -->
+    <section class="section" id="bibtex">
+      <div class="section-header">
+        <span class="section-tag">Citation</span>
+        <h2 class="section-title">BibTeX</h2>
+      </div>
+
+      <div class="bibtex-box">
+        <button class="btn btn-secondary copy-btn bibtex-copy-btn" data-copy-target="bibtex-content">
+          <i class="fa-regular fa-copy"></i> Copy BibTeX
+        </button>
+        <pre><code id="bibtex-content">@article{zhang2026meshsuite,
+  title   = {MeshSuite: A Unified Benchmark for Triangle- and Mesh-Based Neural Rendering},
+  author  = {Zhang, Kaixuan and Li, Minxian and Ren, Mingwu and Zhu, Xiatian},
+  journal = {arXiv preprint arXiv:2609.01306},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2609.01306}
+}</code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: 0.5rem;">
+        <strong>MeshSuite</strong> &copy; 2026 Kaixuan Zhang, Minxian Li, Mingwu Ren, Xiatian Zhu.
+      </p>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">
+        Released under the <a href="https://github.com/prinasi/MeshSuite/blob/main/LICENSE" target="_blank">MIT License</a>.
+        Source code and benchmark assets available on <a href="https://github.com/prinasi/MeshSuite" target="_blank">GitHub</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-notification" class="toast"></div>
+
+  <!-- Scripts -->
+  <script src="static/js/main.js"></script>
+</body>
+</html>
