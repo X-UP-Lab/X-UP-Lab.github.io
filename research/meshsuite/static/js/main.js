@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* -------------------------------------------------------------
- * 1. 4-Way Image Split Slider (Standard -> Dedicated -> Non-Engine -> GT)
+ * 1. 4-Way Image Split Slider (Standard Mesh -> Custom Engine -> De Facto -> GT)
  * ------------------------------------------------------------- */
 const QUAD_IMG_DATA = {
   '2dts': {
@@ -23,7 +23,7 @@ const QUAD_IMG_DATA = {
     non_engine: 'static/images/2dts/non-engine.png',
     gt: 'static/images/2dts/gt.png',
     hasStandard: true,
-    explanation: '<strong>The Soup Deployment Collapse:</strong> 2DTS relies heavily on alpha blending of independent triangle facelets. In Standard Deployment with hardware Z-buffering, overlapping semi-transparent triangles degenerate into opaque black shards (15.6 dB drop). Dedicated Deployment recovers multi-pass alpha compositing.'
+    explanation: '<strong>The Soup Deployment Collapse:</strong> 2DTS relies heavily on alpha blending of independent triangle facelets. In Standard Mesh Deployment with hardware Z-buffering, overlapping semi-transparent triangles degenerate into opaque black shards (15.64 dB drop). Custom Engine Deployment recovers multi-pass alpha compositing.'
   },
   'triangle-splatting': {
     name: 'Triangle-Splatting (Treehill)',
@@ -34,7 +34,7 @@ const QUAD_IMG_DATA = {
     non_engine: 'static/images/triangle-splatting/non-engine.png',
     gt: 'static/images/triangle-splatting/gt.png',
     hasStandard: true,
-    explanation: '<strong>Foliage & Transparency Loss:</strong> Triangle-Splatting uses learned continuous opacity. Under Standard Deployment, fine leaves and tree branches become thick solid geometric occluders (12.4 dB drop). Dedicated Deployment in Unity restores view-dependent spherical harmonics and soft window coverage.'
+    explanation: '<strong>Foliage & Transparency Loss:</strong> Triangle-Splatting uses learned continuous opacity. Under Standard Mesh Deployment, fine leaves and tree branches become thick solid geometric occluders (12.36 dB drop). Custom Engine Deployment in Unity restores view-dependent spherical harmonics and soft window coverage.'
   },
   'mesh-splatting': {
     name: 'MeshSplatting (Garden)',
@@ -45,7 +45,7 @@ const QUAD_IMG_DATA = {
     non_engine: 'static/images/mesh-splatting/non-engine.png',
     gt: 'static/images/mesh-splatting/gt.png',
     hasStandard: true,
-    explanation: '<strong>Indexed Delaunay Mesh:</strong> MeshSplatting features explicit shared vertex indexing and per-vertex colors, losing the least quality (4.9 dB) under Standard Deployment among the studied methods. However, its meshes suffer severe topological defects (over 65% non-manifold vertices).'
+    explanation: '<strong>Surface-Constrained Resilience:</strong> MeshSplatting features explicit shared vertex indexing and per-vertex colors, losing the least quality (4.89 dB drop) under Standard Mesh Deployment among the studied methods. However, structural audits reveal pervasive topological defects (65–87% non-manifold vertices).'
   },
   'diffsoup': {
     name: 'DiffSoup (Bicycle)',
@@ -56,7 +56,7 @@ const QUAD_IMG_DATA = {
     non_engine: 'static/images/diffsoup/non-engine.png',
     gt: 'static/images/diffsoup/gt.png',
     hasStandard: false,
-    explanation: '<strong>Neural Texture In-Shader Decoding:</strong> DiffSoup encodes appearance as latent features decoded by a neural micro-MLP. Standard Deployment is completely unsupported (N/A). Our Dedicated Deployment implements an optimized compute shader in Unity, recovering 23.15 dB at nearly 2000 FPS.'
+    explanation: '<strong>Neural Texture In-Shader Decoding:</strong> DiffSoup encodes appearance as latent features decoded by a neural micro-MLP. Standard Mesh Deployment is unsupported (N/A). Custom Engine Deployment implements an optimized compute shader in Unity, recovering 23.15 dB at nearly 2,000 FPS.'
   }
 };
 
@@ -169,7 +169,7 @@ function initComparisonSlider() {
       if (gridStd) gridStd.src = data.standard;
 
       if (statusBadge) {
-        statusBadge.textContent = 'Standard → Dedicated → Non-Engine → GT';
+        statusBadge.textContent = 'Standard Mesh → Custom Engine → De Facto → GT';
       }
       if (diffsoupNote) diffsoupNote.style.display = 'none';
       updateDividers(25.0, 50.0, 75.0);
@@ -179,7 +179,7 @@ function initComparisonSlider() {
       if (gridColStd) gridColStd.style.display = 'none';
 
       if (statusBadge) {
-        statusBadge.textContent = 'Dedicated → Non-Engine → GT (Standard N/A)';
+        statusBadge.textContent = 'Custom Engine → De Facto → GT (Standard Mesh N/A)';
       }
       if (diffsoupNote) diffsoupNote.style.display = 'block';
       updateDividers(0, 33.33, 66.66);
@@ -577,7 +577,7 @@ function initVideoTabs() {
         vStd.load();
       }
       if (statusBadge) {
-        statusBadge.textContent = 'Standard → Dedicated → Non-Engine';
+        statusBadge.textContent = 'Standard Mesh → Custom Engine → De Facto';
       }
       if (diffsoupNote) diffsoupNote.style.display = 'none';
       updateDividers(33.33, 66.66);
@@ -585,7 +585,7 @@ function initVideoTabs() {
       // DiffSoup case
       if (layerStd) layerStd.style.display = 'none';
       if (statusBadge) {
-        statusBadge.textContent = 'Dedicated → Non-Engine (Standard N/A)';
+        statusBadge.textContent = 'Custom Engine → De Facto (Standard Mesh N/A)';
       }
       if (diffsoupNote) diffsoupNote.style.display = 'block';
       updateDividers(0, 50.0);
