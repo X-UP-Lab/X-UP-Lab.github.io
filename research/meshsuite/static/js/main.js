@@ -450,35 +450,35 @@ function initCodeTabs() {
 /* -------------------------------------------------------------
  * 4. 3-Way Video Split Slider (Standard -> Dedicated -> Non-Engine)
  * ------------------------------------------------------------- */
-const VIDEO_BASE_URL = 'https://github.com/X-UP-Lab/X-UP-Lab.github.io/releases/download/v1.0-meshsuite-media';
+const VIDEO_BASE_URL = 'https://prinasi.github.io/MeshSuite/static/videos';
 
 const TRI_VIDEO_DATA = {
   '2dts': {
     name: '2DTS (Bicycle)',
-    standard: `${VIDEO_BASE_URL}/2dts_standard.mp4`,
-    dedicated: `${VIDEO_BASE_URL}/2dts_dedicated.mp4`,
-    non_engine: `${VIDEO_BASE_URL}/2dts_non-engine.mp4`,
+    standard: `${VIDEO_BASE_URL}/2dts/standard.mp4`,
+    dedicated: `${VIDEO_BASE_URL}/2dts/dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/2dts/non-engine.mp4`,
     hasStandard: true
   },
   'triangle-splatting': {
     name: 'Triangle-Splatting (Bonsai)',
-    standard: `${VIDEO_BASE_URL}/triangle-splatting_standard.mp4`,
-    dedicated: `${VIDEO_BASE_URL}/triangle-splatting_dedicated.mp4`,
-    non_engine: `${VIDEO_BASE_URL}/triangle-splatting_non-engine.mp4`,
+    standard: `${VIDEO_BASE_URL}/triangle-splatting/standard.mp4`,
+    dedicated: `${VIDEO_BASE_URL}/triangle-splatting/dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/triangle-splatting/non-engine.mp4`,
     hasStandard: true
   },
   'mesh-splatting': {
     name: 'MeshSplatting (Garden)',
-    standard: `${VIDEO_BASE_URL}/mesh-splatting_standard.mp4`,
-    dedicated: `${VIDEO_BASE_URL}/mesh-splatting_dedicated.mp4`,
-    non_engine: `${VIDEO_BASE_URL}/mesh-splatting_non-engine.mp4`,
+    standard: `${VIDEO_BASE_URL}/mesh-splatting/standard.mp4`,
+    dedicated: `${VIDEO_BASE_URL}/mesh-splatting/dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/mesh-splatting/non-engine.mp4`,
     hasStandard: true
   },
   'diffsoup': {
     name: 'DiffSoup (Stump)',
     standard: '',
-    dedicated: `${VIDEO_BASE_URL}/diffsoup_dedicated.mp4`,
-    non_engine: `${VIDEO_BASE_URL}/diffsoup_non-engine.mp4`,
+    dedicated: `${VIDEO_BASE_URL}/diffsoup/dedicated.mp4`,
+    non_engine: `${VIDEO_BASE_URL}/diffsoup/non-engine.mp4`,
     hasStandard: false
   }
 };
