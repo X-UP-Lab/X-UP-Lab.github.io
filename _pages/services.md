@@ -6,6 +6,9 @@ nav: true
 nav_order: 3
 ---
 
+### Senior Area Chair
+* [ICML](https://icml.cc) 2027
+
 ### Area Chair
 * [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026), 2027
 * [ICLR 2026](https://iclr.cc/Conferences/2026), 2027
@@ -20,7 +23,7 @@ nav_order: 3
 * [ICCV 2025](https://iccv.thecvf.com/)
 
 ### Workshop Chair
-* AVSS 2027
+* [AVSS 2027](https://www.avss2027.org)
 
 ### Associate Editor
 * [Transactions on Machine Learning Research](https://jmlr.org/tmlr/) (2026 - )
